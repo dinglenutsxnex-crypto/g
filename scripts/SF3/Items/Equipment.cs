@@ -1,10 +1,8 @@
 using System;
-using Nekki.Yaml;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Godot;
-using Nekki.Yaml;
 using Nekki;
 using Nekki.Yaml;
 using SF3.Settings;
@@ -12,6 +10,7 @@ using SF3.UserData;
 using SF3_Attributes;
 using SimpleJSON;
 using sf3DTO;
+using Node = Nekki.Yaml.Node;
 
 namespace SF3.Items
 {

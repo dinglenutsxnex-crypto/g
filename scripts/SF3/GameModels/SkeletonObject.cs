@@ -339,7 +339,7 @@ namespace SF3.GameModels
 			}
 			return array;
 		}
-		public void FillAnimatedTransforms(ref ModelAnimationPlayer.BlendAnimatedTransforms result)
+		public void FillAnimatedTransforms(ref ModelAnimation.BlendAnimatedTransforms result)
 		{
 			for (int i = 0; i < bones.Length; i++)
 			{
@@ -351,7 +351,7 @@ namespace SF3.GameModels
 				}
 			}
 		}
-		public void UpdateBonesPositions(Dictionary<int, AnimatedNode3D> bonesAnimationTransforms)
+		public void UpdateBonesPositions(Dictionary<int, AnimatedTransform> bonesAnimationTransforms)
 		{
 		}
 		public Bone GetBone(string nameBone)

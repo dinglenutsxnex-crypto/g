@@ -20,7 +20,7 @@ namespace SF3.Moves
 		{
 			TriggerActionController.ClearActionsCallbacks();
 		}
-		public static InfoAnimationPlayer GetAnimationByName(string name)
+		public static InfoAnimation GetAnimationByName(string name)
 		{
 			return SplitController.GetAnimationByName(name);
 		}
@@ -33,7 +33,7 @@ namespace SF3.Moves
 			Condition.ClearFunctionResults();
 			return SplitController.LoadTriggers(model);
 		}
-		public static List<InfoAnimationPlayer> GetAnimations()
+		public static List<InfoAnimation> GetAnimations()
 		{
 			return SplitController.GetAnimations();
 		}

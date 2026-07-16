@@ -1,7 +1,7 @@
 using System;
 using Nekki;
 using Godot;
-using Nekki;
+using SF3_Attributes;
 
 namespace SF3.GameModels
 {

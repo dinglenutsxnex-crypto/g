@@ -59,7 +59,7 @@ namespace SF3.Items
 
 		public Node progressPrf;
 
-		private UIProgressBar _progress;
+		private Godot.TextureProgressBar _progress;
 
 		public NekkiUILabel nameLbl;
 

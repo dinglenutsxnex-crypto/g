@@ -109,9 +109,9 @@ namespace SF3.Moves
 			{
 				return CompareStringValue(obj.ToString(), precompileValue.ToString());
 			}
-			if (obj is List<IntervalAnimationPlayer>)
+			if (obj is List<IntervalAnimation>)
 			{
-				return CompareAnimationIntervalsValue((List<IntervalAnimationPlayer>)obj, precompileValue.ToString());
+				return CompareAnimationIntervalsValue((List<IntervalAnimation>)obj, precompileValue.ToString());
 			}
 			if (obj is List<string>)
 			{
@@ -151,9 +151,9 @@ namespace SF3.Moves
 		{
 			return compareWhat.Any((string whatValue) => whatValue.Equals(compareWith));
 		}
-		private bool CompareAnimationIntervalsValue(List<IntervalAnimationPlayer> compareWhat, string compareWith)
+		private bool CompareAnimationIntervalsValue(List<IntervalAnimation> compareWhat, string compareWith)
 		{
-			return compareWhat.Any((IntervalAnimationPlayer whatValue) => whatValue.name.Equals(compareWith));
+			return compareWhat.Any((IntervalAnimation whatValue) => whatValue.name.Equals(compareWith));
 		}
 		private bool CompareDigitValue(double compareWhat, double compareWith)
 		{

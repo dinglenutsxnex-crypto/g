@@ -4,7 +4,7 @@ using Nekki.Yaml;
 namespace SF3.Moves
 {
 	[Serializable]
-	public partial class IntervalDodgeable : IntervalAnimationPlayer
+	public partial class IntervalDodgeable : IntervalAnimation
 	{
 		public int distance { get; private set; }
 		public IntervalAttack intervalAttack { get; private set; }
@@ -14,7 +14,7 @@ namespace SF3.Moves
 			distance = 0;
 			intervalAttack = attackIntervalValue;
 		}
-		public override List<IntervalAnimationPlayer> Parse(Mapping intervalNode)
+		public override List<IntervalAnimation> Parse(Mapping intervalNode)
 		{
 			base.Parse(intervalNode);
 			Scalar text = intervalNode.GetText("Distance");
@@ -22,7 +22,7 @@ namespace SF3.Moves
 			{
 				SetDistance(int.Parse(text.text));
 			}
-			List<IntervalAnimationPlayer> list = new List<IntervalAnimationPlayer>();
+			List<IntervalAnimation> list = new List<IntervalAnimation>();
 			list.Add(this);
 			return list;
 		}

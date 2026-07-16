@@ -8,7 +8,7 @@ using Godot;
 
 namespace SF3.Moves
 {
-	using IntervalAnimation = IntervalAnimationPlayer;
+	// IntervalAnimation alias removed (conflicts with SF3.Moves.IntervalAnimation class)
 	public class InfoAnimation : IHasFileName
 	{
 		public class SoundsForFrame

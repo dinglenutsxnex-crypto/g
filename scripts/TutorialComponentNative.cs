@@ -103,7 +103,7 @@ public class TutorialComponentNative : TutorialComponent
 		}
 	}
 
-	protected override void SelectComponent(bool select)
+	protected void SelectComponent(bool select)
 	{
 		_isSelect = select;
 		isDragable = false;
@@ -138,7 +138,7 @@ public class TutorialComponentNative : TutorialComponent
 		}
 	}
 
-	protected override void DestroySelectionParts()
+	protected void DestroySelectionParts()
 	{
 		base.DestroySelectionParts();
 		if (_selector != null)

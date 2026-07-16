@@ -12,7 +12,7 @@ namespace SF3.Moves
 {
 	public partial class MovesParser
 	{
-		public static void ParseSettingsFromContent(string fileName, string contentSettings, Dictionary<string, InfoAnimationPlayer> receiverAnimations, Dictionary<string, AnimationBinaries> receiverAnimationsBinaries)
+		public static void ParseSettingsFromContent(string fileName, string contentSettings, Dictionary<string, InfoAnimation> receiverAnimations, Dictionary<string, AnimationBinaries> receiverAnimationsBinaries)
 		{
 			YamlDocumentNekki yamlSettings = YamlDocumentNekki.FromYamlContent(contentSettings);
 			ParseSettings(fileName, yamlSettings, receiverAnimations, receiverAnimationsBinaries);
@@ -22,13 +22,13 @@ namespace SF3.Moves
 			YamlDocumentNekki yamlTriggers = YamlDocumentNekki.FromYamlContent(contentTriggers);
 			ParseTriggers(filename, yamlTriggers, receiverTriggers);
 		}
-		public static void ParseAllFromContent(string fileName, string contentSettings, Dictionary<string, InfoAnimationPlayer> receiverAnimations, Dictionary<string, AnimationBinaries> receiverAnimationsBinaries, Dictionary<string, InfoTriggerSet> receiverTriggers)
+		public static void ParseAllFromContent(string fileName, string contentSettings, Dictionary<string, InfoAnimation> receiverAnimations, Dictionary<string, AnimationBinaries> receiverAnimationsBinaries, Dictionary<string, InfoTriggerSet> receiverTriggers)
 		{
 			YamlDocumentNekki yamlDocumentNekki = YamlDocumentNekki.FromYamlContent(contentSettings);
 			ParseTriggers(fileName, yamlDocumentNekki, receiverTriggers);
 			ParseSettings(fileName, yamlDocumentNekki, receiverAnimations, receiverAnimationsBinaries);
 		}
-		private static void ParseSettings(string fileName, YamlDocumentNekki yamlSettings, Dictionary<string, InfoAnimationPlayer> receiverAnimations, Dictionary<string, AnimationBinaries> receiverAnimationsBinaries)
+		private static void ParseSettings(string fileName, YamlDocumentNekki yamlSettings, Dictionary<string, InfoAnimation> receiverAnimations, Dictionary<string, AnimationBinaries> receiverAnimationsBinaries)
 		{
 			Sequence sequence = yamlSettings.GetRoot().GetSequence("Animations");
 			if (sequence == null)
@@ -44,7 +44,7 @@ namespace SF3.Moves
 					continue;
 				}
 				Scalar text2 = item.GetText("FileName");
-				InfoAnimationPlayer infoAnimationPlayer;
+				InfoAnimation infoAnimationPlayer;
 				if (text2 != null)
 				{
 					string name = text2.text.Substring(0, text2.text.LastIndexOf('.'));
@@ -58,11 +58,11 @@ namespace SF3.Moves
 							receiverAnimationsBinaries.Add(fileName, animationBinaries);
 						}
 					}
-					infoAnimationPlayer = new InfoAnimationPlayer(text.text, animationBinaries);
+					infoAnimationPlayer = new InfoAnimation(text.text, animationBinaries);
 				}
 				else
 				{
-					infoAnimationPlayer = new InfoAnimationPlayer(text.text);
+					infoAnimationPlayer = new InfoAnimation(text.text);
 				}
 				text = item.GetText("MidFrames");
 				if (text != null)
@@ -184,7 +184,7 @@ namespace SF3.Moves
 				receiverAnimations.Add(infoAnimationPlayer.name, infoAnimationPlayer);
 			}
 		}
-		private static void ParseSwitchFrames(Sequence sequnce, InfoAnimationPlayer AnimationPlayer)
+		private static void ParseSwitchFrames(Sequence sequnce, InfoAnimation AnimationPlayer)
 		{
 			foreach (Mapping item in sequnce.nodesInside)
 			{
@@ -214,9 +214,9 @@ namespace SF3.Moves
 			}
 			AnimationPlayer.SortSwitchFrames();
 		}
-		private static void ParseSounds(Sequence sequnce, InfoAnimationPlayer AnimationPlayer)
+		private static void ParseSounds(Sequence sequnce, InfoAnimation AnimationPlayer)
 		{
-			List<InfoAnimationPlayer.SoundsForFrame> soundsFrameIn = InfoAnimationPlayer.SoundsForFrame.Parse(sequnce);
+			List<InfoAnimation.SoundsForFrame> soundsFrameIn = InfoAnimation.SoundsForFrame.Parse(sequnce);
 			AnimationPlayer.AddSounds(soundsFrameIn);
 		}
 		private static void ParseTriggers(string filename, YamlDocumentNekki yamlTriggers, Dictionary<string, InfoTriggerSet> receiverTriggers)
@@ -318,7 +318,7 @@ namespace SF3.Moves
 				}
 			}
 		}
-		private static void ParseAlign(Mapping nodeAlign, InfoAnimationPlayer animInfo)
+		private static void ParseAlign(Mapping nodeAlign, InfoAnimation animInfo)
 		{
 			MoveAlign moveAlign = new MoveAlign();
 			Sequence sequence = nodeAlign.GetSequence("Axis");
@@ -426,7 +426,7 @@ namespace SF3.Moves
 			}
 			animInfo.SetAlign(moveAlign);
 		}
-		private static void ParseStages(Sequence nodes, InfoAnimationPlayer animInfo)
+		private static void ParseStages(Sequence nodes, InfoAnimation animInfo)
 		{
 			foreach (Scalar node in nodes)
 			{
@@ -434,7 +434,7 @@ namespace SF3.Moves
 				animInfo.stages.Add(enumerator2);
 			}
 		}
-		private static void ParseTransitions(Sequence nodes, InfoAnimationPlayer animInfo)
+		private static void ParseTransitions(Sequence nodes, InfoAnimation animInfo)
 		{
 			foreach (Mapping node in nodes)
 			{
@@ -458,7 +458,7 @@ namespace SF3.Moves
 				animInfo.AddTransition(animationTransition);
 			}
 		}
-		private static void ParseGroups(Sequence nodes, InfoAnimationPlayer animInfo)
+		private static void ParseGroups(Sequence nodes, InfoAnimation animInfo)
 		{
 			List<string> list = new List<string>();
 			foreach (Scalar node in nodes)
@@ -467,9 +467,9 @@ namespace SF3.Moves
 			}
 			animInfo.SetGroups(list);
 		}
-		private static void ParseIntervals(Sequence nodes, InfoAnimationPlayer animInfo)
+		private static void ParseIntervals(Sequence nodes, InfoAnimation animInfo)
 		{
-			List<IntervalAnimationPlayer> list = IntervalAnimationPlayer.Create(nodes);
+			List<IntervalAnimation> list = IntervalAnimation.Create(nodes);
 			if (list != null)
 			{
 				animInfo.SetIntervals(list);
@@ -540,7 +540,7 @@ namespace SF3.Moves
 			}
 			infoTrigger.SetActions(list);
 		}
-		private static void ParseRepulsionRect(Mapping sourceNode, InfoAnimationPlayer AnimationPlayer)
+		private static void ParseRepulsionRect(Mapping sourceNode, InfoAnimation AnimationPlayer)
 		{
 			Mapping mapping = sourceNode.GetMapping("RepulsionScale");
 			if (mapping != null)

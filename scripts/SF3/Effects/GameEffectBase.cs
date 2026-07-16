@@ -50,11 +50,11 @@ namespace SF3.Effects
 		{
 		}
 
-		public void Play()
+		public virtual void Play()
 		{
 		}
 
-		public void Stop()
+		public virtual void Stop()
 		{
 		}
 

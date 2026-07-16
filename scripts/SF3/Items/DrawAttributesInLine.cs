@@ -164,13 +164,26 @@ namespace SF3.Items
 		}
 
 		[Serializable]
+		public enum PivotType
+		{
+			Center,
+			TopLeft,
+			Top,
+			TopRight,
+			Left,
+			Right,
+			BottomLeft,
+			Bottom,
+			BottomRight
+		}
+
 		public partial class LblProperties
 		{
 			public Vector2Int lblSize;
 
-			public Label.Overflow overflow;
+			public Label.OverflowBehavior overflow;
 
-			public Control.Pivot pivot;
+			public PivotType pivot;
 
 			public int fonSize;
 
@@ -186,9 +199,9 @@ namespace SF3.Items
 
 		public Vector2Int arrowSize;
 
-		public Control.Pivot pivot;
+		public PivotType pivot;
 
-		public Control.Pivot attributeLinePivot = Control.Pivot.Center;
+		public PivotType attributeLinePivot = PivotType.Center;
 
 		public AttributeLblProperties firstLblProperties;
 
@@ -312,9 +325,25 @@ namespace SF3.Items
 			lbl.Modulate = normalColor;
 			if (properties != null)
 			{
-				lbl.Pivot = properties.pivot;
+				ApplyLabelPivot(lbl, properties.pivot);
 				lbl.FontSize = properties.fonSize;
 				lbl.Size = new Vector2(properties.lblSize.x, properties.lblSize.y);
+			}
+		}
+
+		private static void ApplyLabelPivot(Label lbl, PivotType pivot)
+		{
+			switch (pivot)
+			{
+				case PivotType.TopLeft: lbl.HorizontalAlignment = HorizontalAlignment.Left; lbl.VerticalAlignment = VerticalAlignment.Top; break;
+				case PivotType.Top: lbl.HorizontalAlignment = HorizontalAlignment.Center; lbl.VerticalAlignment = VerticalAlignment.Top; break;
+				case PivotType.TopRight: lbl.HorizontalAlignment = HorizontalAlignment.Right; lbl.VerticalAlignment = VerticalAlignment.Top; break;
+				case PivotType.Left: lbl.HorizontalAlignment = HorizontalAlignment.Left; lbl.VerticalAlignment = VerticalAlignment.Center; break;
+				case PivotType.Center: lbl.HorizontalAlignment = HorizontalAlignment.Center; lbl.VerticalAlignment = VerticalAlignment.Center; break;
+				case PivotType.Right: lbl.HorizontalAlignment = HorizontalAlignment.Right; lbl.VerticalAlignment = VerticalAlignment.Center; break;
+				case PivotType.BottomLeft: lbl.HorizontalAlignment = HorizontalAlignment.Left; lbl.VerticalAlignment = VerticalAlignment.Bottom; break;
+				case PivotType.Bottom: lbl.HorizontalAlignment = HorizontalAlignment.Center; lbl.VerticalAlignment = VerticalAlignment.Bottom; break;
+				case PivotType.BottomRight: lbl.HorizontalAlignment = HorizontalAlignment.Right; lbl.VerticalAlignment = VerticalAlignment.Bottom; break;
 			}
 		}
 
@@ -396,7 +425,7 @@ namespace SF3.Items
 				}
 			}
 			Vector3 pos = Vector3.Zero;
-			if (attributeLinePivot == Control.Pivot.Center)
+			if (attributeLinePivot == PivotType.Center)
 			{
 				pos = new Vector3((0f - num2) / 2f, 0f, 0f);
 			}

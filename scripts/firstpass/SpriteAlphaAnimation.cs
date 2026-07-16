@@ -72,7 +72,7 @@ public class SpriteAlphaAnimation : Node
         Activate(_animationStyle, _animationTime);
     }
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         if (!_active) return;
 

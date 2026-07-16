@@ -152,7 +152,7 @@ namespace SF3.Effects
             Scale = localScale;
         }
 
-        protected override void OnUpdate(double delta)
+        protected void OnUpdate(double delta)
         {
             if (delayedEffects != null)
             {

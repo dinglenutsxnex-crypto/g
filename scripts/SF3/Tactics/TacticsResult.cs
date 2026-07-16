@@ -5,12 +5,12 @@ namespace SF3.Tactics
 	[StructLayout(LayoutKind.Sequential, Size = 1)]
 	public struct TacticsResult
 	{
-		public InfoAnimationPlayer provocation { get; private set; }
+		public InfoAnimation provocation { get; private set; }
 		public string reactionName { get; private set; }
 		public float distance { get; private set; }
 		public float startFrame { get; private set; }
 		public float hitFrame { get; private set; }
-		public TacticsResult(InfoAnimationPlayer provocation, string reactionName, float distance, float startFrame, float hitFrame)
+		public TacticsResult(InfoAnimation provocation, string reactionName, float distance, float startFrame, float hitFrame)
 		{
 			this.provocation = provocation;
 			this.reactionName = reactionName;
