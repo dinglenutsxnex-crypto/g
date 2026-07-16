@@ -1,5 +1,6 @@
 using Godot;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.Moves;
 
 public class TriggerActionShowDialog : TriggerAction

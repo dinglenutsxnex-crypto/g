@@ -8,6 +8,7 @@ using Godot;
 
 namespace SF3.Moves
 {
+	using IntervalAnimation = IntervalAnimationPlayer;
 	public class InfoAnimation : IHasFileName
 	{
 		public class SoundsForFrame

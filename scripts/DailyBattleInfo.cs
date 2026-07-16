@@ -25,7 +25,7 @@ public partial class DailyBattleInfo : BattleInfo
 	{
 		Parse(data);
 	}
-	protected override void Parse(Dictionary<string, JsValue> data)
+	protected void Parse(Dictionary<string, JsValue> data)
 	{
 		base.Parse(data);
 		foreach (KeyValuePair<string, JsValue> datum in data)

@@ -4,7 +4,7 @@ public class TextWrapper : TextPic
 {
 	public Action onTextChage;
 
-	public override string text
+	public string text
 	{
 		get
 		{

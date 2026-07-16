@@ -6,13 +6,13 @@ namespace SF3.Effects
 	{
 		private AnimationPlayer AnimationPlayer;
 		private bool checkToDisable;
-		public AnimationClip animationClip;
+		public Animation animationClip;
 		public float playTime;
 		private float timer;
 		public string stateName;
 		private Vector3 worldPos;
 		private Vector3 curPos;
-		protected override void _Ready()
+		public override void _Ready()
 		{
 			base.Awake();
 			AnimationPlayer = GetComponent<AnimationPlayer>();
@@ -23,7 +23,7 @@ namespace SF3.Effects
 			FixPosition();
 			base.Play(model, curPos);
 			AnimationPlayer.Play(stateName);
-			playTime = animationClip.length;
+			playTime = animationClip.Length;
 			checkToDisable = true;
 			timer = 0f;
 		}

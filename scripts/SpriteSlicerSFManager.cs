@@ -6,7 +6,7 @@ public partial class SpriteSlicerSFManager : Node2D
 {
 	private List<SpriteSlicer2DSliceInfo> _slicedSpriteInfo = new List<SpriteSlicer2DSliceInfo>();
 
-	private TrailRenderer2D _trailRenderer;
+	private Line2D _trailRenderer;
 
 	private const float MAX_ANGLE_DEVIATION_WITHIN_SWIPE = 5f;
 
@@ -64,7 +64,7 @@ public partial class SpriteSlicerSFManager : Node2D
 
 	public override void _Ready()
 	{
-		_trailRenderer = GetNode<TrailRenderer2D>("TrailRenderer2D");
+		_trailRenderer = GetNode<Line2D>("TrailRenderer2D");
 		EnableTrailParticles(false);
 		_childSpriteRigidbodies = new List<RigidBody2D>();
 		_slashs = new List<BoosterpackSlash>();
@@ -269,7 +269,7 @@ public partial class SpriteSlicerSFManager : Node2D
 	{
 		if (_trailRenderer != null)
 		{
-			_trailRenderer.Clear();
+			_trailRenderer.ClearPoints();
 		}
 	}
 

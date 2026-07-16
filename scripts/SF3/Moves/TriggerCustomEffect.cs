@@ -1,5 +1,6 @@
 using System;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.Effects;
 using Godot;
 using SF3.GameModels;

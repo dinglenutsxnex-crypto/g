@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using Ionic.Zlib;
+using System.IO.Compression;
 using Nekki.Yaml;
 using Nekki.Zip;
 using SF3.Moves;
 
-public class SplitTriggers
+public partial class SplitTriggers
 {
 	public const string HeaderName = "HEADER.yaml";
 
@@ -195,7 +195,7 @@ public class SplitTriggers
 
 	private static void PackingArchive()
 	{
-		ZipUtils.SaveZipFromDirectory(SplitDir, GlobalPath.ApplicationPath + "/" + SplitZipName, CompressionLevel.None);
+		ZipUtils.SaveZipFromDirectory(SplitDir, GlobalPath.ApplicationPath + "/" + SplitZipName, System.IO.Compression.CompressionLevel.NoCompression);
 		FilesUtil.DeleteDirectory(SplitDir);
 	}
 

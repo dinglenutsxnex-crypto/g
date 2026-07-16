@@ -22,7 +22,7 @@ public partial class BoosterpackItem : ReelItem
 			_tweenScale.enabled = false;
 		}
 	}
-	public override Vector2 LocalSize()
+	public Vector2 LocalSize()
 	{
 		return _image.localSize;
 	}
@@ -53,7 +53,7 @@ public partial class BoosterpackItem : ReelItem
 			break;
 		}
 	}
-	public override void Init(BaseItem baseItem)
+	public void Init(BaseItem baseItem)
 	{
 		base.Item = baseItem;
 		_Node3D = base.Node3D;
@@ -72,7 +72,7 @@ public partial class BoosterpackItem : ReelItem
 	{
 		_rewardStatusLbl.Visible = true;
 	}
-	public override void HideRewardStatus()
+	public void HideRewardStatus()
 	{
 		_rewardStatusLbl.Visible = false;
 	}

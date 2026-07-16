@@ -1,5 +1,6 @@
 using System;
 using Godot;
+using Color = Godot.Color;
 using SF3;
 using SF3.Audio;
 using SF3.Effects;

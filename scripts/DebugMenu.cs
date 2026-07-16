@@ -29,7 +29,7 @@ public partial class DebugMenu : UIModuleHolder, ISceneInitializationObject
 			return _inctance;
 		}
 	}
-	protected override void _Ready()
+	public override void _Ready()
 	{
 		base.Awake();
 		_inctance = this;

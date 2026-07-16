@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using Godot;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 using SF3.Moves;
 using SF3.Tactics;

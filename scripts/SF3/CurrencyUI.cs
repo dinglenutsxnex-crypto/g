@@ -15,13 +15,13 @@ namespace SF3
 		[Export]
 		private Label level;
 		[Export]
-		public Label levelProgress;
+		public ProgressBar levelProgress;
 		[Export]
 		public Label userName;
 		[Export]
 		private RectNode3D rectNode3D;
 		private static CurrencyUI _instance;
-		private SpriteAlphaAnimationPlayer spriteAlphaAnimationPlayer;
+		private SpriteAlphaAnimation spriteAlphaAnimationPlayer;
 		private bool isShowing;
 		public static CurrencyUI instance
 		{
@@ -73,7 +73,7 @@ namespace SF3
 			UserManager.AddActionForCurrency(CurrencyType.Shadow, SetShadowsText);
 			UserManager.OnExperienceChanged += UpdateLevelAndExperience;
 		}
-		protected override void _ExitTree()
+		public override void _ExitTree()
 		{
 			UserManager.RemoveActionForCurrency(CurrencyType.Coin, SetCoinsText);
 			UserManager.RemoveActionForCurrency(CurrencyType.Bonus, SetBonusText);
@@ -108,21 +108,18 @@ namespace SF3
 		{
 			SetCurrencyText(shadowsLbl, shadows, animate);
 		}
-		private void SetCurrencyText(UnityEngine.UI.Text label, long value, bool anim)
+		private void SetCurrencyText(Label label, long value, bool anim)
 		{
 			if (anim)
 			{
 				long startCoins = 0L;
-				long.TryParse(label.text, out startCoins);
-				DOTween.To(() => startCoins, delegate(long x)
-				{
-					startCoins = x;
-					label.text = startCoins.ToString();
-				}, value, 1f).SetEase(Ease.Linear);
+				long.TryParse(label.Text, out startCoins);
+				// TODO: port DOTween animation
+				label.Text = value.ToString();
 			}
 			else
 			{
-				label.text = value.ToString();
+				label.Text = value.ToString();
 			}
 		}
 		private void UpdateLevelAndExperience(long expValue)

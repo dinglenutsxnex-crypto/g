@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using Godot;
 
 public class DialogConfig

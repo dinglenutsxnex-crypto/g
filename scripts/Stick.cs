@@ -126,9 +126,9 @@ public class Stick : UIModuleHolder
 		{
 			if (_lastDirection != value)
 			{
-				_instance.callEvent(2, new AbstractController.Key(KeyCode.None, _lastDirection.GetQuadrant(), 1));
+				_instance.callEvent(2, new AbstractController.Key(Godot.Key.None, _lastDirection.GetQuadrant(), 1));
 				_lastDirection = value;
-				_instance.callEvent(1, new AbstractController.Key(KeyCode.None, Direction.GetQuadrant(), 1));
+				_instance.callEvent(1, new AbstractController.Key(Godot.Key.None, Direction.GetQuadrant(), 1));
 			}
 		}
 	}
@@ -167,7 +167,7 @@ public class Stick : UIModuleHolder
 
 	public static void OpenInterface()
 	{
-		_instance.callEvent(2, new AbstractController.Key(KeyCode.None, _lastDirection.GetQuadrant(), 1));
+		_instance.callEvent(2, new AbstractController.Key(Godot.Key.None, _lastDirection.GetQuadrant(), 1));
 	}
 
 	public void DragProcess(Node3D stick, bool inSafe)
@@ -180,7 +180,7 @@ public class Stick : UIModuleHolder
 		if (!informStickStart)
 		{
 			informStickStart = true;
-			callEvent(2, new AbstractController.Key(KeyCode.None, EDirections.Idle.GetQuadrant(), 1));
+			callEvent(2, new AbstractController.Key(Godot.Key.None, EDirections.Idle.GetQuadrant(), 1));
 		}
 		Vector3 position = stick.Position;
 		ControlPoint controlPoint = null;
@@ -208,7 +208,7 @@ public class Stick : UIModuleHolder
 	{
 		if (informStickStart)
 		{
-			callEvent(2, new AbstractController.Key(KeyCode.None, Direction.GetQuadrant(), 1));
+			callEvent(2, new AbstractController.Key(Godot.Key.None, Direction.GetQuadrant(), 1));
 			informStickStart = false;
 		}
 		Direction = EDirections.Idle;

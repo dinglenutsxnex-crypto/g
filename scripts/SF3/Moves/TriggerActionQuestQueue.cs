@@ -3,7 +3,7 @@ using Nekki.Yaml;
 using SF3.Moves;
 using SF3.UserData;
 
-public class TriggerActionQuestQueue : TriggerActionQuest
+public partial class TriggerActionQuestQueue : TriggerActionQuest
 {
 	private bool hasQuests;
 

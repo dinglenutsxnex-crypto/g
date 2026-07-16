@@ -3,7 +3,9 @@ using System.Globalization;
 using System.Linq;
 using Nekki;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
+using SF3.UserData;
 using Godot;
 namespace SF3.Moves
 {

@@ -8,6 +8,7 @@ using Jint.Native;
 using Jint.Native.Array;
 using Nekki;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.Items;
 using SF3.Settings;
 using SF3.UserData;

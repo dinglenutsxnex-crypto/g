@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.Moves;
 using Godot;
 internal class TriggerActionHighlightButton : TriggerActionQuest

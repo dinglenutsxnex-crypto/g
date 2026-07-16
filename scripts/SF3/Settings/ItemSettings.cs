@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Godot;
+using Color = Godot.Color;
 using sf3DTO;
 
 namespace SF3.Settings

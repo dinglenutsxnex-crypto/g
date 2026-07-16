@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 
 namespace SF3.Moves
 {

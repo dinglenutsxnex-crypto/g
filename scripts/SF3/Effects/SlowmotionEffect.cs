@@ -10,7 +10,7 @@ namespace SF3.Effects
 	{
 		public string name;
 		public int inOutFrames;
-		public AnimationCurve inOutCurve;
+		public Curve inOutCurve;
 		public float timeScaleValue;
 		private int _counter;
 		private bool _playStart;
@@ -84,7 +84,7 @@ namespace SF3.Effects
 			if (_playStart)
 			{
 				_counter++;
-				float num = Mathf.Lerp(1f, timeScaleValue, inOutCurve.Evaluate(_counter / inOutFrames));
+				float num = Mathf.Lerp(1f, timeScaleValue, inOutCurve.Sample((float)_counter / inOutFrames));
 				GameTimeController.ChangeGameTime(num);
 				AudioManager.Instance.SetPitch(num);
 				if (_counter >= inOutFrames)
@@ -95,7 +95,7 @@ namespace SF3.Effects
 			else if (_playEnd)
 			{
 				_counter++;
-				float num2 = Mathf.Lerp(timeScaleValue, 1f, inOutCurve.Evaluate(_counter / inOutFrames));
+				float num2 = Mathf.Lerp(timeScaleValue, 1f, inOutCurve.Sample((float)_counter / inOutFrames));
 				GameTimeController.ChangeGameTime(num2);
 				AudioManager.Instance.SetPitch(num2);
 				if (_counter >= inOutFrames)

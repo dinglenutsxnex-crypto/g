@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
+using Color = Godot.Color;
 using Nekki.UI;
 using SF3;
 using SF3.Effects;
@@ -102,7 +103,7 @@ public class RewardsWindow : NekkiUIModule
 
 	private List<BaseItem> _rewardItem;
 
-	private ICardAnimation _cardAnimation;
+	private ICardAnimationPlayer _cardAnimation;
 
 	private SF3.FightResult _fightResult;
 

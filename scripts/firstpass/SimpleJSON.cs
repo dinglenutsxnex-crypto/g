@@ -1221,7 +1221,7 @@ namespace SimpleJSON
             }
         }
 
-        public IEnumerator GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
             return m_List.GetEnumerator();
         }
@@ -1481,7 +1481,7 @@ namespace SimpleJSON
             }
         }
 
-        public IEnumerator GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
             return m_Dict.GetEnumerator();
         }

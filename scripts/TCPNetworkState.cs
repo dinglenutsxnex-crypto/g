@@ -1,5 +1,5 @@
 using Network.core.events;
-public partial class TCPNetworkState : NetworkStateBase
+public abstract partial class TCPNetworkState : NetworkStateBase
 {
 	public sealed override void Start(object data)
 	{

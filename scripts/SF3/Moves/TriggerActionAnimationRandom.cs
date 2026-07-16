@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 using Godot;
 namespace SF3.Moves

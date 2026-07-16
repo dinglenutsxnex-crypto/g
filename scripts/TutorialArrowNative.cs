@@ -8,7 +8,7 @@ public partial class TutorialArrowNative : TutorialPointer
 	public Color EndColor;
 	[Export]
 	private TextureRect _image;
-	public override void Init(float duration)
+	public void Init(float duration)
 	{
 		if (!_init)
 		{

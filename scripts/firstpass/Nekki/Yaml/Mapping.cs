@@ -135,5 +135,13 @@ namespace Nekki.Yaml
 		}
 
 		public void Reset() { indexPosition = -1; }
+
+		public List<string> GetKeys()
+		{
+			List<string> keys = new List<string>();
+			foreach (Node item in nodesInside)
+				keys.Add(item.key);
+			return keys;
+		}
 	}
 }

@@ -2,7 +2,7 @@ using Godot;
 
 public partial class TEstBlendSHape : Node
 {
-	[Export] public SkinnedMeshInstance3D skinnedMeshRenderer;
+	[Export] public MeshInstance3D skinnedMeshRenderer;
 	[Export] public bool playbl;
 
 	public override void _Ready()

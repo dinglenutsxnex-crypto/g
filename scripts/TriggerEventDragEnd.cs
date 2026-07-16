@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Nekki.Yaml;
+using SF3.Moves;
 
 public class TriggerEventDragEnd : TriggerEvent
 {

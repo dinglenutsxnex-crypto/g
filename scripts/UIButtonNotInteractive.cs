@@ -1,6 +1,9 @@
 public partial class UIButtonNotInteractive : Button
 {
-	public override void SetState(State state, bool immediate)
+	private bool mInitDone;
+	private bool mState;
+
+	public virtual void SetState(bool state, bool immediate)
 	{
 		if (!mInitDone)
 		{
@@ -11,6 +14,10 @@ public partial class UIButtonNotInteractive : Button
 		{
 			mState = state;
 		}
+	}
+
+	protected virtual void OnInit()
+	{
 	}
 }
 

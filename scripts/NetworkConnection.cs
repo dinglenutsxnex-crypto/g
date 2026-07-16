@@ -13,7 +13,7 @@ public class NetworkConnection : Node
 	public string CurrentConfigVersion { get; set; }
 	public bool InsideDarkPocket { get; set; }
 	public static string CurrentStateName { get; set; }
-	public UserData UserData { get; set; }
+	public UserDataInfo UserData { get; set; }
 
 	[Export]
 	private string _defaultServer = "localhost";
@@ -24,7 +24,7 @@ public class NetworkConnection : Node
 	private bool _isConnected;
 	private Queue<NetworkEvent> _pendingEvents = new Queue<NetworkEvent>();
 
-	public class UserData
+	public class UserDataInfo
 	{
 		public AuthData Auth { get; set; }
 	}
@@ -41,7 +41,7 @@ public class NetworkConnection : Node
 		current = this;
 		Server = _defaultServer;
 		TCPPort = _defaultPort;
-		UserData = new UserData { Auth = new AuthData() };
+		UserData = new UserDataInfo { Auth = new AuthData() };
 		CurrentConfigVersion = "0.0.0";
 	}
 

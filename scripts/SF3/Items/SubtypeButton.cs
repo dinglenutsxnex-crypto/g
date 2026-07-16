@@ -21,7 +21,7 @@ namespace SF3.Items
 
 		private bool inited;
 
-		public Collider Collider { get; private set; }
+		public Area3D Collider { get; private set; }
 
 		public long NewItems { get; private set; }
 
@@ -40,7 +40,7 @@ namespace SF3.Items
 				tweenPosition.from = subTypeButton.Position;
 				tweenPosition.to = tweenPosition.from + new Vector3(14f, 0f, 0f);
 				tweenPosition.enabled = false;
-				Collider = subTypeButton.GetComponent<Collider>();
+				Collider = subTypeButton.GetNode<Area3D>("Area3D");
 			}
 		}
 

@@ -48,7 +48,7 @@ public partial class SpriteAlphaAnimation : Node2D
 		_currentAnimationStyle = newAnimationStyle;
 		_timer = 0f;
 		_active = true;
-		_currentAnimationStyle = timeSeconds;
+		_animationTime = timeSeconds;
 	}
 
 	public override void _Process(double delta)

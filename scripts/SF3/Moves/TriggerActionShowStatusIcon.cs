@@ -2,7 +2,7 @@ using Nekki.Yaml;
 using SF3.GameModels;
 using SF3.Moves;
 
-public class TriggerActionShowStatusIcon : TriggerAction
+public partial class TriggerActionShowStatusIcon : TriggerAction
 {
 	private readonly string _icon;
 

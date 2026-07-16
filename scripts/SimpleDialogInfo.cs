@@ -1,3 +1,5 @@
+using Godot;
+
 public class SimpleDialogInfo
 {
 	public Label TitleLabel;

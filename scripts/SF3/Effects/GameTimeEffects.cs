@@ -24,7 +24,7 @@ namespace SF3.Effects
 				return _freezeFrameEffect.active;
 			}
 		}
-		public AnimationCurve slowmotionCurve
+		public Curve slowmotionCurve
 		{
 			get
 			{

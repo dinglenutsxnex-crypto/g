@@ -7,7 +7,7 @@ public class BalancerNetworkState : TCPNetworkState
 	private int _retryCount;
 	private int _maxRetries = 3;
 
-	protected override void OnEnter()
+	protected void OnEnter()
 	{
 		base.OnEnter();
 		_retryCount = 0;

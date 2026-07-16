@@ -49,7 +49,7 @@ namespace SF3
 			}
 		}
 		public bool _collisionCapsulesActive { get; private set; }
-		protected override void _Ready()
+		public override void _Ready()
 		{
 			base.Awake();
 			Instance = this;
@@ -58,8 +58,9 @@ namespace SF3
 			_enemyStatsActive = false;
 			_collisionCapsulesActive = false;
 			_sceneDebugActive = false;
+			InitButtons();
 		}
-		private void _Ready()
+		private void InitButtons()
 		{
 			if (_btPlayersStats != null)
 			{
@@ -86,6 +87,7 @@ namespace SF3
 				}
 			}
 		}
+
 		private void ShowHideEnemyStats()
 		{
 			if (!(enemyStats == null) && enemyStats != null)

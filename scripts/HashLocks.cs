@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using Godot;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 
 public class HashLocks
 {

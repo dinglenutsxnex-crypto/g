@@ -3,13 +3,13 @@ public partial class TutorialArrowNGUI : TutorialPointer
 {
 	public float offset;
 	public float amplitude;
-	public AnimationCurve animCurve;
+	public Curve animCurve;
 	public Color startColor;
 	public Color endColor;
 	private Node3D _transf;
 	private Control _widget;
 	private TextureRect _sprite;
-	public override void Init(float duration)
+	public void Init(float duration)
 	{
 		if (!_init)
 		{

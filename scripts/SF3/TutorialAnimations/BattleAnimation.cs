@@ -19,11 +19,11 @@ namespace SF3.TutorialAnimations
 			tween.TweenProperty(Owner, "position:y", Offset.y, 0.25f);
 		}
 
-		public override void OutAnimation(Action callback)
+		public override void OutAnimation(Callable callback)
 		{
 			Tween tween = CreateTween();
 			tween.TweenProperty(Owner, "modulate:a", 0f, 0.25f);
-			tween.Finished += () => callback();
+			tween.Finished += callback;
 		}
 
 		private void SetStartPosition()

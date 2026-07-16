@@ -4,7 +4,7 @@ using SF3.GameModels;
 using SF3.Items;
 using SF3.Moves;
 
-public class TriggerActionShowSfIcon : TriggerAction
+public partial class TriggerActionShowSfIcon : TriggerAction
 {
 	private readonly int _framesDuration;
 

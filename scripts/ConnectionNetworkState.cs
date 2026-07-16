@@ -4,14 +4,14 @@ using Network.core.events;
 
 public class ConnectionNetworkState : TCPNetworkState
 {
-	protected override void OnEnter()
+	protected void OnEnter()
 	{
 		base.OnEnter();
 		GD.Print("ConnectionNetworkState: Connecting...");
 		NetworkConnection.current.Connect();
 	}
 
-	protected override void OnExit()
+	protected void OnExit()
 	{
 		base.OnExit();
 		GD.Print("ConnectionNetworkState: Connected");

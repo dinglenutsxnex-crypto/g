@@ -39,7 +39,7 @@ namespace SF3.Effects
 			get { return _leftSide; }
 		}
 
-		protected override void _Ready()
+		public override void _Ready()
 		{
 			base._Ready();
 			transf.SetParent(NekkiUIRoot.Instance.GetAnchor(side));

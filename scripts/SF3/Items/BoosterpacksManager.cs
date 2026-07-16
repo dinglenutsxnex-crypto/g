@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SF3.Settings;
 using SF3.UserData;
 using Godot;
+using Color = Godot.Color;
 using sf3DTO;
 
 namespace SF3.Items

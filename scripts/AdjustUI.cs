@@ -42,7 +42,7 @@ public partial class AdjustUI : Control
 	public float ScaleX = 1f;
 	public float ScaleY = 1f;
 	public Control TransformCtrl;
-	public static Canvas Canvas;
+	public static Control Canvas;
 	public bool ExecuteOnUpdate;
 
 	private static float ScreenWidth => DisplayServer.WindowGetSize().X;
@@ -66,7 +66,7 @@ public partial class AdjustUI : Control
 		if (TransformCtrl == null)
 			TransformCtrl = this;
 		if (Canvas == null)
-			Canvas = GetParent() as Canvas;
+			Canvas = GetParent() as Control;
 
 		switch (ScaleMode)
 		{

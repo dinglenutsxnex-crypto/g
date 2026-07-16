@@ -8,51 +8,54 @@ public class SetupRagdoll : Node
 {
 	private class RagdollPartData
 	{
-		private CapsuleCollider _capsuleCollider;
-		private BoxCollider _boxCollider;
-		private SphereCollider _sphereCollider;
-		private Rigidbody _rigidBody;
-		private CharacterJoint _joint;
+		private CollisionShape3D _capsuleCollider;
+		private CollisionShape3D _boxCollider;
+		private CollisionShape3D _sphereCollider;
+		private RigidBody3D _rigidBody;
+		private Generic6DOFJoint3D _joint;
 		private Vector3 _localPosition;
 		private Vector3 _localAngles;
 		private float _weight;
 
-		public CapsuleCollider capsuleCollider { get { return _capsuleCollider; } }
-		public BoxCollider boxCollider { get { return _boxCollider; } }
-		public SphereCollider sphereCollider { get { return _sphereCollider; } }
-		public Rigidbody rigidBody { get { return _rigidBody; } }
-		public CharacterJoint joint { get { return _joint; } }
+		public CollisionShape3D capsuleCollider { get { return _capsuleCollider; } }
+		public CollisionShape3D boxCollider { get { return _boxCollider; } }
+		public CollisionShape3D sphereCollider { get { return _sphereCollider; } }
+		public RigidBody3D rigidBody { get { return _rigidBody; } }
+		public Generic6DOFJoint3D joint { get { return _joint; } }
 		public Vector3 localPosition { get { return _localPosition; } }
 		public Vector3 localAngles { get { return _localAngles; } }
 		public float weight { get { return _weight; } }
 
 		public RagdollPartData(Node3D boneTransform, IBonesHolder model)
 		{
-			_rigidBody = boneTransform.GetNode<Rigidbody>();
-			_joint = boneTransform.GetNode<CharacterJoint>();
-			Collider component = boneTransform.GetNode<Collider>();
-			if (component is CapsuleCollider)
+			_rigidBody = boneTransform.GetNode<RigidBody3D>();
+			_joint = boneTransform.GetNode<Generic6DOFJoint3D>();
+			CollisionShape3D component = boneTransform.GetNode<CollisionShape3D>();
+			if (component != null)
 			{
-				_capsuleCollider = (CapsuleCollider)component;
-			}
-			else if (component is BoxCollider)
-			{
-				_boxCollider = (BoxCollider)component;
-			}
-			else if (component is SphereCollider)
-			{
-				_sphereCollider = (SphereCollider)component;
+				if (component.Shape is CapsuleShape3D)
+				{
+					_capsuleCollider = component;
+				}
+				else if (component.Shape is BoxShape3D)
+				{
+					_boxCollider = component;
+				}
+				else if (component.Shape is SphereShape3D)
+				{
+					_sphereCollider = component;
+				}
 			}
 			_localPosition = boneTransform.Position;
 			_localAngles = boneTransform.RotationDegrees;
 			_weight = model.GetBone(boneTransform.Name).weight;
 		}
 
-		private void ActivateCollider(Collider collider, bool activate)
+		private void ActivateCollider(CollisionShape3D collider, bool activate)
 		{
 			if (collider != null)
 			{
-				collider.Enabled = activate;
+				collider.Disabled = !activate;
 			}
 		}
 
@@ -63,7 +66,7 @@ public class SetupRagdoll : Node
 			ActivateCollider(_sphereCollider, true);
 			if (_rigidBody != null)
 			{
-				_rigidBody.FreezeMode = Rigidbody.FreezeModeEnum.Static;
+				_rigidBody.FreezeMode = RigidBody3D.FreezeModeEnum.Static;
 				_rigidBody.GravityScale = 1f;
 			}
 		}
@@ -75,7 +78,7 @@ public class SetupRagdoll : Node
 			ActivateCollider(_sphereCollider, false);
 			if (_rigidBody != null)
 			{
-				_rigidBody.FreezeMode = Rigidbody.FreezeModeEnum.Static;
+				_rigidBody.FreezeMode = RigidBody3D.FreezeModeEnum.Static;
 				_rigidBody.GravityScale = 0f;
 			}
 		}
@@ -197,13 +200,13 @@ public class SetupRagdoll : Node
 	{
 		foreach (string key in _ragdollData.Keys)
 		{
-			CharacterJoint joint = _ragdollData[key].joint;
+			Generic6DOFJoint3D joint = _ragdollData[key].joint;
 			if (joint != null)
 			{
-				CharacterJoint characterJoint = _modelBones[key].boneObject.GetNode<CharacterJoint>();
+				Generic6DOFJoint3D characterJoint = _modelBones[key].boneObject.GetNode<Generic6DOFJoint3D>();
 				if (characterJoint == null)
 				{
-					characterJoint = new CharacterJoint();
+					characterJoint = new Generic6DOFJoint3D();
 					_modelBones[key].boneObject.AddChild(characterJoint);
 				}
 				characterJoint.ExcludeNodes = joint.ExcludeNodes;
@@ -214,46 +217,64 @@ public class SetupRagdoll : Node
 			}
 			if (_ragdollData[key].rigidBody != null)
 			{
-				Rigidbody rigidbody = _modelBones[key].boneObject.GetNode<Rigidbody>();
+				RigidBody3D rigidbody = _modelBones[key].boneObject.GetNode<RigidBody3D>();
 				if (rigidbody == null)
 				{
-					rigidbody = new Rigidbody();
+					rigidbody = new RigidBody3D();
 					_modelBones[key].boneObject.AddChild(rigidbody);
 				}
 				rigidbody.Mass = _ragdollData[key].weight;
 			}
 			if (_ragdollData[key].sphereCollider != null)
 			{
-				SphereCollider sphereCollider = _modelBones[key].boneObject.GetNode<SphereCollider>();
+				CollisionShape3D sphereCollider = _modelBones[key].boneObject.GetNode<CollisionShape3D>();
 				if (sphereCollider == null)
 				{
-					sphereCollider = new SphereCollider();
+					sphereCollider = new CollisionShape3D();
+					sphereCollider.Shape = new SphereShape3D();
 					_modelBones[key].boneObject.AddChild(sphereCollider);
 				}
-				sphereCollider.Radius = _ragdollData[key].sphereCollider.Radius;
+				SphereShape3D srcSphere = _ragdollData[key].sphereCollider.Shape as SphereShape3D;
+				SphereShape3D dstSphere = sphereCollider.Shape as SphereShape3D;
+				if (srcSphere != null && dstSphere != null)
+				{
+					dstSphere.Radius = srcSphere.Radius;
+				}
 				sphereCollider.Position = _ragdollData[key].sphereCollider.Position;
 			}
 			else if (_ragdollData[key].boxCollider != null)
 			{
-				BoxCollider boxCollider = _modelBones[key].boneObject.GetNode<BoxCollider>();
+				CollisionShape3D boxCollider = _modelBones[key].boneObject.GetNode<CollisionShape3D>();
 				if (boxCollider == null)
 				{
-					boxCollider = new BoxCollider();
+					boxCollider = new CollisionShape3D();
+					boxCollider.Shape = new BoxShape3D();
 					_modelBones[key].boneObject.AddChild(boxCollider);
 				}
-				boxCollider.Size = _ragdollData[key].boxCollider.Size;
+				BoxShape3D srcBox = _ragdollData[key].boxCollider.Shape as BoxShape3D;
+				BoxShape3D dstBox = boxCollider.Shape as BoxShape3D;
+				if (srcBox != null && dstBox != null)
+				{
+					dstBox.Size = srcBox.Size;
+				}
 				boxCollider.Position = _ragdollData[key].boxCollider.Position;
 			}
 			else if (_ragdollData[key].capsuleCollider != null)
 			{
-				CapsuleCollider capsuleCollider = _modelBones[key].boneObject.GetNode<CapsuleCollider>();
+				CollisionShape3D capsuleCollider = _modelBones[key].boneObject.GetNode<CollisionShape3D>();
 				if (capsuleCollider == null)
 				{
-					capsuleCollider = new CapsuleCollider();
+					capsuleCollider = new CollisionShape3D();
+					capsuleCollider.Shape = new CapsuleShape3D();
 					_modelBones[key].boneObject.AddChild(capsuleCollider);
 				}
-				capsuleCollider.Height = _ragdollData[key].capsuleCollider.Height;
-				capsuleCollider.Radius = _ragdollData[key].capsuleCollider.Radius;
+				CapsuleShape3D srcCapsule = _ragdollData[key].capsuleCollider.Shape as CapsuleShape3D;
+				CapsuleShape3D dstCapsule = capsuleCollider.Shape as CapsuleShape3D;
+				if (srcCapsule != null && dstCapsule != null)
+				{
+					dstCapsule.Height = srcCapsule.Height;
+					dstCapsule.Radius = srcCapsule.Radius;
+				}
 				capsuleCollider.Position = _ragdollData[key].capsuleCollider.Position;
 			}
 		}

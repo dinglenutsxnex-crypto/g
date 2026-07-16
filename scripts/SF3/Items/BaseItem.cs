@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Jint.Native;
 using Jint.Native.Object;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SimpleJSON;
 using Godot;
 namespace SF3.Items

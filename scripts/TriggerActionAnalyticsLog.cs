@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using Newtonsoft.Json.Linq;
 using SF3.Moves;
 using Godot;

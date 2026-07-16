@@ -82,10 +82,10 @@ public class GamepadController : AbstractController
 
 	private void CheckKeys()
 	{
-		Array values = Enum.GetValues(typeof(KeyCode));
+		Array values = Enum.GetValues(typeof(Godot.Key));
 		for (int i = 0; i < values.GetLength(0); i++)
 		{
-			if (Input.IsKeyPressed((KeyCode)values.GetValue(i)))
+			if (Input.IsKeyPressed((Godot.Key)values.GetValue(i)))
 			{
 				GD.Print(values.GetValue(i).ToString());
 			}
@@ -131,19 +131,19 @@ public class GamepadController : AbstractController
 		{
 			if (quadrantForPoint != lastQuadrants[num2])
 			{
-				callEvent(0, new Key(KeyCode.None, quadrantForPoint, gpIndex));
+				callEvent(0, new Key(Godot.Key.None, quadrantForPoint, gpIndex));
 				if (lastQuadrants[num2] != EQuadrants.None)
 				{
-					callEvent(1, new Key(KeyCode.None, lastQuadrants[num2], gpIndex));
+					callEvent(1, new Key(Godot.Key.None, lastQuadrants[num2], gpIndex));
+
 				}
-				lastQuadrants[num2] = quadrantForPoint;
 			}
 		}
 		else
 		{
 			if (lastQuadrants[num2] != EQuadrants.None)
 			{
-				callEvent(1, new Key(KeyCode.None, lastQuadrants[num2], gpIndex));
+				callEvent(1, new Key(Godot.Key.None, lastQuadrants[num2], gpIndex));
 			}
 			lastQuadrants[num2] = quadrantForPoint;
 		}

@@ -16,7 +16,7 @@ public class TutorialComponentNative : TutorialComponent
 
 	private Control _rect;
 
-	public override Vector3 Viewport
+	public Vector3 Viewport
 	{
 		get
 		{
@@ -25,16 +25,16 @@ public class TutorialComponentNative : TutorialComponent
 		}
 	}
 
-	public override bool IsNative()
+	public bool IsNative()
 	{
 		return true;
 	}
 
-	protected override void _Process(double delta)
+	public override void _Process(double delta)
 	{
 	}
 
-	public override void Select()
+	public void Select()
 	{
 		SetBlockLayer(true);
 		SelectComponent(true);
@@ -49,7 +49,7 @@ public class TutorialComponentNative : TutorialComponent
 		InitColor();
 	}
 
-	protected override void InitComponents()
+	protected void InitComponents()
 	{
 		_rect = this as Control;
 		Button component = this as Button;
@@ -59,7 +59,7 @@ public class TutorialComponentNative : TutorialComponent
 		}
 	}
 
-	protected override void InitColor()
+	protected void InitColor()
 	{
 		if (_selectorIcon != null)
 		{
@@ -71,7 +71,7 @@ public class TutorialComponentNative : TutorialComponent
 		}
 	}
 
-	protected override void CreateArrow()
+	protected void CreateArrow()
 	{
 		if (arrowPosition != ArrowPosition.None)
 		{
@@ -83,7 +83,7 @@ public class TutorialComponentNative : TutorialComponent
 		}
 	}
 
-	protected override void CreateSelectionBorder()
+	protected void CreateSelectionBorder()
 	{
 		if (selectorPrf == null)
 		{
@@ -95,7 +95,7 @@ public class TutorialComponentNative : TutorialComponent
 		}
 	}
 
-	protected override void CreateSelectionMask()
+	protected void CreateSelectionMask()
 	{
 		if (selectMaskPrf != null && _selectMask == null)
 		{

@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using Google.Protobuf;
+using Google.Protobuf.Collections;
 
 namespace clientDTO
 {

@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 
 namespace SF3.Moves
 {

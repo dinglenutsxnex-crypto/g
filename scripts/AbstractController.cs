@@ -6,11 +6,11 @@ public abstract class AbstractController : ExtentionBehaviour
 {
 	public class Key
 	{
-		public KeyCode KeyCode { get; private set; }
+		public Godot.Key KeyCode { get; private set; }
 		public EQuadrants Quadrant { get; private set; }
 		public int ModelID { get; private set; }
 
-		public Key(KeyCode keyCode, EQuadrants quadrant, int modelID)
+		public Key(Godot.Key keyCode, EQuadrants quadrant, int modelID)
 		{
 			Quadrant = quadrant;
 			KeyCode = keyCode;
@@ -23,7 +23,7 @@ public abstract class AbstractController : ExtentionBehaviour
 
 	protected List<Key> keyCodes = new List<Key>();
 
-	public void AddTrakedKey(KeyCode key, EQuadrants quadrant, int modelID = -1)
+	public void AddTrakedKey(Godot.Key key, EQuadrants quadrant, int modelID = -1)
 	{
 		keyCodes.Add(new Key(key, quadrant, modelID));
 	}

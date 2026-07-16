@@ -1,6 +1,7 @@
 using System;
 using SF3.Settings;
 using Godot;
+using Color = Godot.Color;
 using sf3DTO;
 namespace SF3.Items
 {

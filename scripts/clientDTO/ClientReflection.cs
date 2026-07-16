@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Google.Protobuf.Reflection;
 
 namespace clientDTO
 {

@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 
 public class LoadScreen : UIModuleHolder
 {
@@ -55,18 +56,14 @@ public class LoadScreen : UIModuleHolder
     public override void _ExitTree()
     {
         base._ExitTree();
+        OnDisableLoader();
+        _instance = null;
     }
 
     public override void _Process(double delta)
     {
         if (!LoaderVisible && _onHideLoader.Count > 0)
             OnDisableLoader();
-    }
-
-    public override void _ExitTree()
-    {
-        OnDisableLoader();
-        _instance = null;
     }
 
     public static void ShowLoader(Action onDone = null, float showDelay = 0f, bool instantly = false)

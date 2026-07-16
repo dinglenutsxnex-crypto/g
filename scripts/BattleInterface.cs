@@ -261,7 +261,7 @@ public sealed class BattleInterface : ExtentionBehaviour, ISceneInitializationOb
 		}
 	}
 
-	internal override void _Process(double delta)
+	public override void _Process(double delta)
 	{
 		if (_playerModelInfo != null && !(_playerHud == null))
 		{

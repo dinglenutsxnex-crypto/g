@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Godot;
+using Node = Godot.Node;
 using Nekki;
 using Nekki.Yaml;
 using Network.core.events;
@@ -184,13 +185,13 @@ public class DebugUI : UIModuleHolder
 		}
 	}
 
-	public static void RecursiveMappingOpening(Node node)
+	public static void RecursiveMappingOpening(Nekki.Yaml.Node node)
 	{
 		if (node is Mapping)
 		{
 			GD.Print(">> " + (string)node.Get("key"));
 			{
-				foreach (Node item in (System.Collections.IEnumerable)((Mapping)node).Get("nodesInside"))
+				foreach (Nekki.Yaml.Node item in (System.Collections.IEnumerable)((Mapping)node).Get("nodesInside"))
 				{
 					RecursiveMappingOpening(item);
 				}
@@ -201,7 +202,7 @@ public class DebugUI : UIModuleHolder
 		{
 			GD.Print("--- " + (string)node.Get("key"));
 			{
-				foreach (Node item2 in (System.Collections.IEnumerable)((Sequence)node).Get("nodesInside"))
+				foreach (Nekki.Yaml.Node item2 in (System.Collections.IEnumerable)((Sequence)node).Get("nodesInside"))
 				{
 					RecursiveMappingOpening(item2);
 				}

@@ -16,7 +16,7 @@ public partial class TrailAnimatedTexture : Node
 
 	public override void _Ready()
 	{
-		TrailRenderer3D trail = GetNode<TrailRenderer3D>(".");
+		Node3D trail = GetNode<Node3D>(".");
 		if (trail != null)
 			material = trail.MaterialOverride;
 		StartTime = Engine.GetProcessTime();
