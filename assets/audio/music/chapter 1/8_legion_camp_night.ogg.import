@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buasjpnncivcm"
+path="res://.godot/imported/8_legion_camp_night.ogg-4d164de8bd84b57997938db8aabb113d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/chapter 1/8_legion_camp_night.ogg"
+dest_files=["res://.godot/imported/8_legion_camp_night.ogg-4d164de8bd84b57997938db8aabb113d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

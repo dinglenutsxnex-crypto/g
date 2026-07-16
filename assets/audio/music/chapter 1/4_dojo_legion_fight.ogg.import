@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crdnoidjrkusn"
+path="res://.godot/imported/4_dojo_legion_fight.ogg-956f70f756a76820e2ceb5b05de4c879.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/chapter 1/4_dojo_legion_fight.ogg"
+dest_files=["res://.godot/imported/4_dojo_legion_fight.ogg-956f70f756a76820e2ceb5b05de4c879.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

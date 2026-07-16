@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwefiwi06dvb6"
+path="res://.godot/imported/6_Body_Fall_V1_bip.wav-d0da27546e2c8baff4d607680a946f0b.sample"
+
+[deps]
+
+source_file="res://assets/audio/sounds/fall/body layer/6_Body_Fall_V1_bip.wav"
+dest_files=["res://.godot/imported/6_Body_Fall_V1_bip.wav-d0da27546e2c8baff4d607680a946f0b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

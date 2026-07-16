@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bp8faoleto2ia"
+path="res://.godot/imported/2_Wood_Hits_V30 _bip.wav-39e87d77d039d426d1dded5aff2e2dbe.sample"
+
+[deps]
+
+source_file="res://assets/audio/sounds/strike/wood/light/2_Wood_Hits_V30 _bip.wav"
+dest_files=["res://.godot/imported/2_Wood_Hits_V30 _bip.wav-39e87d77d039d426d1dded5aff2e2dbe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bubudjbhavyw4"
+path="res://.godot/imported/1_Stone_Floor_Texture_Of_The_Body_Fall_V5.wav-3cdd25b300f8465b17de4f6a4a830272.sample"
+
+[deps]
+
+source_file="res://assets/audio/sounds/fall/floor layer/stone/1_Stone_Floor_Texture_Of_The_Body_Fall_V5.wav"
+dest_files=["res://.godot/imported/1_Stone_Floor_Texture_Of_The_Body_Fall_V5.wav-3cdd25b300f8465b17de4f6a4a830272.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

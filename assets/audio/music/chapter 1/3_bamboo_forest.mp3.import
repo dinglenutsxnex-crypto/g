@@ -1,0 +1,18 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://byx1atoq6w51w"
+valid=false
+
+[deps]
+
+source_file="res://assets/audio/music/chapter 1/3_bamboo_forest.mp3"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

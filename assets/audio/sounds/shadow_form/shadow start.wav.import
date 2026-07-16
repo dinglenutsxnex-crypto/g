@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wuhdoqe5nsw3"
+path="res://.godot/imported/shadow start.wav-05842018c98422590a3b44e9e06c4c82.sample"
+
+[deps]
+
+source_file="res://assets/audio/sounds/shadow_form/shadow start.wav"
+dest_files=["res://.godot/imported/shadow start.wav-05842018c98422590a3b44e9e06c4c82.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

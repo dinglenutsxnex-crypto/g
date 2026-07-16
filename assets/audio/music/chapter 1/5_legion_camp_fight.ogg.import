@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b37phwrgrwgyw"
+path="res://.godot/imported/5_legion_camp_fight.ogg-effeb8dc29be7761bdaa37bb2b7ff18d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/chapter 1/5_legion_camp_fight.ogg"
+dest_files=["res://.godot/imported/5_legion_camp_fight.ogg-effeb8dc29be7761bdaa37bb2b7ff18d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

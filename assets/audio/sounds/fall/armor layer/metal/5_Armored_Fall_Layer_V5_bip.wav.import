@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bv6r2b3y3o005"
+path="res://.godot/imported/5_Armored_Fall_Layer_V5_bip.wav-5626bd79743dd9ff0be0f2eb099c8ec9.sample"
+
+[deps]
+
+source_file="res://assets/audio/sounds/fall/armor layer/metal/5_Armored_Fall_Layer_V5_bip.wav"
+dest_files=["res://.godot/imported/5_Armored_Fall_Layer_V5_bip.wav-5626bd79743dd9ff0be0f2eb099c8ec9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

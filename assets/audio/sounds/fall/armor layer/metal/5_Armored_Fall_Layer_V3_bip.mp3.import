@@ -1,0 +1,18 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bseya3pq2wrj0"
+valid=false
+
+[deps]
+
+source_file="res://assets/audio/sounds/fall/armor layer/metal/5_Armored_Fall_Layer_V3_bip.mp3"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

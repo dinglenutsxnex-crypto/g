@@ -1,0 +1,18 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wrhk5ld3h4o8"
+valid=false
+
+[deps]
+
+source_file="res://assets/audio/sounds/fall/floor layer/wood/4_Wooden_Floor_Texture_Of_The_Body_Fall_V8_bip.mp3"
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
