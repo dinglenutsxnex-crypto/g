@@ -6,7 +6,7 @@ using System;
 
 public class CheckJoystick : Node  // TODO: pick correct Godot base (CharacterBody3D / Area3D / RigidBody3D / Node)
 {
-	public UISprite sprite;
+	public TextureRect sprite;
 	public void Start()
 	{
 		// TODO: port logic

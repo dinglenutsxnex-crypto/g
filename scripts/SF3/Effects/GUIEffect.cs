@@ -6,13 +6,13 @@ namespace SF3.Effects
 {
 	public class GUIEffect : GameEffectBase
 	{
-		public UIAnchor.Side side;
+		public string side;
 
 		public Vector3 localPos;
 
-		public UIAnchor.Side leftAnchor = UIAnchor.Side.TopLeft;
+		public string leftAnchor = "TopLeft";
 
-		public UIAnchor.Side rightAnchor = UIAnchor.Side.TopRight;
+		public string rightAnchor = "TopRight";
 
 		public float leftSidePos;
 

@@ -373,4 +373,75 @@ public class BattleInfo : IBattleInfo, ICloneable
 	{
 		_currentFightIndex = fightIndex;
 	}
+
+	public JSONClass ToJSON()
+	{
+		JSONClass jSONClass = new JSONClass();
+		jSONClass.Add("ID", new JSONData(_id));
+		jSONClass.Add("Hidden", new JSONData(_hidden ? 1 : 0));
+		jSONClass.Add("Available", new JSONData(_available ? 1 : 0));
+		jSONClass.Add("WonFights", new JSONData(_currentFightIndex));
+		if (HasExpirationTime())
+		{
+			jSONClass.Add("ExpirationTime", new JSONData(_expirationTime.GetUnixTimeStampMilliseconds()));
+		}
+		jSONClass.Add("GenTime", new JSONData(_genTime.GetUnixTimeStampMilliseconds()));
+		if (_fights.Count > 0)
+		{
+			JSONArray jSONArray = new JSONArray();
+			foreach (FightInfo fight in _fights)
+			{
+				jSONArray.Add(fight.ToJSON());
+			}
+			jSONClass.Add("Fights", jSONArray);
+		}
+		return jSONClass;
+	}
+
+	public void SetExpirationTime()
+	{
+		DateTime dateTime = _genTime.AddMilliseconds(GetCooldown());
+		_expirationTime = DateTime.UtcNow.AddMilliseconds(GetCooldown());
+		if (_expirationTime < dateTime)
+		{
+			_expirationTime = dateTime;
+		}
+	}
+
+	public void MergeWith(Battle battleValue, int battleIndex)
+	{
+		if (_battleType == sf3DTO.BattleType.Survival)
+		{
+			if (battleValue.BattleCounter % battleValue.Battles.Count == battleIndex)
+			{
+				SetCurrentFight(battleValue.CurrentFightIndex);
+			}
+			else
+			{
+				SetCurrentFight(0);
+			}
+		}
+		else if (battleValue.BattleCounter >= battleValue.Battles.Count)
+		{
+			SetCurrentFight(_fights.Count);
+		}
+		else
+		{
+			SetCurrentFight(battleValue.CurrentFightIndex);
+		}
+		_genTime = NekkiUtils.GetUnixDateTimeFromMilliseconds(battleValue.GenTime.Value);
+		if (battleValue.LastFightFinishTime != null)
+		{
+			_finishTime = NekkiUtils.GetUnixDateTimeFromMilliseconds(battleValue.LastFightFinishTime.Value);
+		}
+		GeneratedBattle generatedBattle = battleValue.Battles[battleIndex];
+		for (int i = 0; i < generatedBattle.Fights.Count; i++)
+		{
+			_fights[i].Merge(generatedBattle.Fights[i]);
+		}
+		if (GetIsCompleted())
+		{
+			SetBattleHidden(true);
+		}
+	}
 }

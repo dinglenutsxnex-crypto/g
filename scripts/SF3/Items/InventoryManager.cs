@@ -18,16 +18,16 @@ namespace SF3.Items
 		private string _onCloseSoundName = string.Empty;
 
 		[Export]
-		private UISprite _abilitiesBadge;
+		private TextureRect _abilitiesBadge;
 
 		[Export]
-		private UILabel _abilitiesBadgeLabel;
+		private Label _abilitiesBadgeLabel;
 
 		public InventorySlot[] inventorySlots;
 
-		private UIButton _equipItemButton;
+		private Button _equipItemButton;
 
-		private UILabel _equipItemLable;
+		private Label _equipItemLable;
 
 		private Node _itemPropertiesBtn;
 
@@ -85,7 +85,7 @@ namespace SF3.Items
 
 		public Node inventoryReelBack;
 
-		private UIButton _propertiesButton;
+		private Button _propertiesButton;
 
 		private Action onSceneChanged;
 
@@ -122,26 +122,26 @@ namespace SF3.Items
 			_categoryTypeCurrent = EquipmentType.Weapon;
 			NekkiUIElements component = GetComponent<NekkiUIElements>();
 			_lastClickedSlot = null;
-			component.Get<UIButton>("propertiesBackBtn").onClick.Add(new EventDelegate(delegate
+			component.Get<Button>("propertiesBackBtn").Pressed += delegate
 			{
 				SF3UiLogger.instance.AddButtonClickEvent(ConstantsSF3.ELocationSceneModule.Inventory, "inventory");
 				ShowInventory();
 				_intent.SetSubModule(InventoryIntentModule.InventorySubModuleType.None);
-			}));
-			_propertiesButton = component.Get<UIButton>("propertiesBtn");
-			_propertiesButton.onClick.Add(new EventDelegate(delegate
+			};
+			_propertiesButton = component.Get<Button>("propertiesBtn");
+			_propertiesButton.Pressed += delegate
 			{
 				SF3UiLogger.instance.AddAbilitesClickEvent(inventoryReelDriver.Selected, _abilitiesBadgeCount);
 				ShowPerkScreen();
 				_intent.SetSubModule(InventoryIntentModule.InventorySubModuleType.PerkScreen);
-			}));
-			_itemPropertiesBtn = _propertiesButton.Node;
-			_itemPropertiesBtn.SetActive(true);
-			_equipItemButton = component.Get<UIButton>("equipItemButton");
-			_equipItemButton.Collider.enabled = false;
-			_equipItemButton.Node.SetActive(true);
-			_equipItemButton.onClick.Add(new EventDelegate(Equip));
-			_equipItemLable = _equipItemButton.GetComponentInChildren<UILabel>();
+			};
+			_itemPropertiesBtn = _propertiesButton;
+			_itemPropertiesBtn.SetDeferred("visible", true);
+			_equipItemButton = component.Get<Button>("equipItemButton");
+			_equipItemButton.Disabled = true;
+			_equipItemButton.SetDeferred("visible", true);
+			_equipItemButton.Pressed += Equip;
+			_equipItemLable = _equipItemButton.GetNode<Label>("Label");
 			inventory.SetActive(false);
 			properties.SetActive(false);
 			detailsPanel.Init();
@@ -159,8 +159,8 @@ namespace SF3.Items
 			};
 			inventoryReelDriver.ItemStartChanging += delegate
 			{
-				_propertiesButton.isEnabled = false;
-				_equipItemButton.isEnabled = false;
+				_propertiesButton.Disabled = true;
+				_equipItemButton.Disabled = true;
 			};
 			inventoryReelDriver.ItemSwiped += PreviewItemStats;
 			SubtypeButton.Reset();
@@ -169,15 +169,15 @@ namespace SF3.Items
 			{
 				inventoryButton.Init();
 				EquipmentType buttonType = inventoryButton.TypeEquipment;
-				UIButton component2 = inventoryButton.subTypeButton.GetComponent<UIButton>();
-				component2.onClick.Add(new EventDelegate(delegate
+				Button component2 = inventoryButton.subTypeButton.GetNode<Button>("Button");
+				component2.Pressed += delegate
 				{
 					if (_categoryTypeCurrent != buttonType)
 					{
 						LodChageSlot(_categoryTypeCurrent.ToString(), buttonType.ToString(), inventoryButton.NewItems);
 						ChangeSubType(buttonType);
 					}
-				}));
+				};
 				inventoryButton.UpateBadge();
 			}
 			Node perkInfoBarNode = perkInfoBarPrf.Duplicate();

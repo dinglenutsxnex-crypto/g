@@ -6,9 +6,9 @@ using System;
 
 public class ButtonSelectionNGUI : TutorialPointer
 {
-	public UISprite _background;
-	public UISprite _innerSprite;
-	public UILabel _label;
+	public TextureRect _background;
+	public TextureRect _innerSprite;
+	public Label _label;
 	public Color startBackgroundColor;
 	public Color endBackgroundColor;
 	public Color startInnerColor;
@@ -20,12 +20,12 @@ public class ButtonSelectionNGUI : TutorialPointer
 		// TODO: port logic
 	}
 
-	public void Set(UIWidget background, Vector2 borderPadding, UISprite icon, UILabel label)
+	public void Set(Control background, Vector2 borderPadding, TextureRect icon, Label label)
 	{
 		// TODO: port logic
 	}
 
-	public void GeneralSettings(UIWidget widget, UIWidget settings)
+	public void GeneralSettings(Control widget, Control settings)
 	{
 		// TODO: port logic
 	}

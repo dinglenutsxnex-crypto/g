@@ -2,7 +2,7 @@ using System;
 using Godot;
 public partial class TimeoutNetworkState : NetworkStateBase
 {
-	private Coroutine _timeoutRoutine;
+	private GodotObject _timeoutRoutine;
 	private float _reconnectTimeout;
 	private bool _warningShown;
 	public override void Start(object data)

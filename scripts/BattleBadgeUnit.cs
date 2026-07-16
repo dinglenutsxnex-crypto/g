@@ -3,7 +3,7 @@ using System;
 
 public class BattleBadgeUnit : Node
 {
-	private UISprite _sprite;
+	private TextureRect _sprite;
 	private Label _label;
 
 	public int Id { get; private set; }

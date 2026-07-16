@@ -9,7 +9,7 @@ namespace Network.core
 		public string cmd;
 		public Action<NetworkEvent> callback;
 		public object data;
-		public Coroutine timeoutCoroutine;
+		public GodotObject timeoutCoroutine;
 		public void Invoke(NetworkEvent e)
 		{
 			callback.InvokeSafe(e);

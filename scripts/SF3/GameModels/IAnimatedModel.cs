@@ -10,9 +10,9 @@ namespace SF3.GameModels
 		Bone GetBone(string nameBone);
 		void SetRagdollActive(bool isActive);
 		string GetName();
-		void FillAnimatedTransforms(ref ModelAnimationPlayer.BlendAnimatedTransforms result);
-		void UpdateBonesPositions(Dictionary<int, AnimatedNode3D> bonesAnimationTransforms);
-		ModelInfoAnimationPlayer GetModelAnimationByName(string name);
+		void FillAnimatedTransforms(ref ModelAnimation.BlendAnimatedTransforms result);
+		void UpdateBonesPositions(Dictionary<int, AnimatedTransform> bonesAnimationTransforms);
+		ModelInfoAnimation GetModelAnimationByName(string name);
 		EDirectionType GetMoveDirection();
 		bool GetMirrored();
 		void CheckMirrored(int? forceValue);

@@ -18,7 +18,7 @@ public class PingManager
 	public long lastUpdateTime;
 	public bool running;
 	public int failedPings;
-	public Coroutine delayPingCor;
+	public GodotObject delayPingCor;
 	public int lastPing;
 	public PingResponse extensible;
 	public Timestamp timestamp;

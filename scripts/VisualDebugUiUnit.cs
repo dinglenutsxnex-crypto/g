@@ -6,10 +6,10 @@ public class VisualDebugUiUnit : Node
 {
 	private static List<VisualDebugUiUnit> _units = new List<VisualDebugUiUnit>();
 
-	public UIButton btnExpand;
-	public UIButton btnUnExpand;
-	public UIButton btnUnit;
-	public UILabel lblUnitName;
+	public Button btnExpand;
+	public Button btnUnExpand;
+	public Button btnUnit;
+	public Label lblUnitName;
 
 	private VisualDebugUI.Unit _unit;
 

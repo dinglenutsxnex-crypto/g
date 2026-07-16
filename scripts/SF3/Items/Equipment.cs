@@ -7,6 +7,7 @@ using Nekki;
 using Nekki.Yaml;
 using SF3.Settings;
 using SF3.UserData;
+using SF3_Attributes;
 using SimpleJSON;
 using sf3DTO;
 
@@ -285,6 +286,131 @@ namespace SF3.Items
 		public bool IsDefault()
 		{
 			return _isDefault;
+		}
+
+		public void SetEquipmentType(EquipmentType type)
+		{
+			_typeEquipment = type;
+		}
+
+		public bool IsHidden()
+		{
+			return _hidden;
+		}
+
+		public int GetSlotQuantity()
+		{
+			return _slots.Length;
+		}
+
+		public bool HasSlots()
+		{
+			return _slots.Length > 0;
+		}
+
+		public List<ItemSlot> GetSlotItems()
+		{
+			return _slots.ToList();
+		}
+
+		public bool CanAddSlotItem(ISlotItem item)
+		{
+			return !HasPerk((Perk)item);
+		}
+
+		public bool HasPerk(Perk item)
+		{
+			return _slots.Any((ItemSlot slot) => slot.HasPerk(item.id));
+		}
+
+		public bool AddSlotItem(ISlotItem slotitem, int slotIndex)
+		{
+			if (CanAddSlotItem(slotitem) && slotIndex < _slots.Length)
+			{
+				_slots[slotIndex].SetPerk((Perk)slotitem);
+				return true;
+			}
+			return false;
+		}
+
+		public bool RemoveSlotItem(ISlotItem item, out int slotIndex)
+		{
+			ItemSlot itemSlot = _slots.FirstOrDefault((ItemSlot pr) => pr.HasPerk(item.GetId()));
+			if (itemSlot != null)
+			{
+				itemSlot.RemovePerk();
+				slotIndex = itemSlot.slotIndex;
+				return true;
+			}
+			slotIndex = -1;
+			return false;
+		}
+
+		public Attributes GetAttributesForCombat()
+		{
+			return _attributesHolder.GetAttributes(AttributePurpose.Combat);
+		}
+
+		public SortedDictionary<AttributeType, float> GetAttributesForDisplayData()
+		{
+			return GetAttributesData(AttributePurpose.Display);
+		}
+
+		public SortedDictionary<AttributeType, float> GetAttributesForCombatData()
+		{
+			return GetAttributesData(AttributePurpose.Combat);
+		}
+
+		private SortedDictionary<AttributeType, float> GetAttributesData(AttributePurpose purpose)
+		{
+			return _attributesHolder.GetAttributesData(purpose);
+		}
+
+		public float GetAttributesForCombatValue(AttributeType attributeKey)
+		{
+			return GetAttributeValue(AttributePurpose.Combat, attributeKey);
+		}
+
+		public float GetAttributesForDisplayValue(AttributeType attributeKey)
+		{
+			return GetAttributeValue(AttributePurpose.Display, attributeKey);
+		}
+
+		private float GetAttributeValue(AttributePurpose purpose, AttributeType key)
+		{
+			return _attributesHolder.GetAttributeValue(purpose, key);
+		}
+
+		public void MergeSimilarItems(IStackable toMerge)
+		{
+			Equipment equipment = toMerge as Equipment;
+			if (equipment == null)
+			{
+				GD.PrintErr("Something wrong.. This is not instance of Equipment. " + toMerge.GetType());
+				return;
+			}
+			double num = JsFunction.MergeStackLevels(stackLevel, equipment.stackLevel, (int)_rarity, UserManager.UserModelInfo.level);
+			SetStackLevel(num);
+		}
+
+		public int GetLevelUpCount(IStackable newItem)
+		{
+			return JsFunction.GetLevelUpCount(stackLevel, newItem.GetStackLevel(), (int)_rarity);
+		}
+
+		public float GetBarValue()
+		{
+			return JsFunction.GetBar(stackLevel, (int)_rarity);
+		}
+
+		public float GetLevelUpBar(IStackable newItem)
+		{
+			return JsFunction.GetLevelUpBar(stackLevel, newItem.GetStackLevel(), (int)_rarity);
+		}
+
+		public bool HasPerks()
+		{
+			return _slots.Any((ItemSlot pr) => pr.HasPerk());
 		}
 	}
 }

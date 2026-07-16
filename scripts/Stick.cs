@@ -36,8 +36,8 @@ public class Stick : UIModuleHolder
 	{
 		public string Name;
 		public EQuadrants Quadrant;
-		public UISprite Normal;
-		public UISprite Active;
+		public TextureRect Normal;
+		public TextureRect Active;
 		public Node TutorUnit;
 		public Node ShadowHintUnit;
 
@@ -87,13 +87,13 @@ public class Stick : UIModuleHolder
 		}
 	}
 
-	private UISprite Highlight;
-	private UISprite ContainerNorm;
-	private UISprite ContainerAction;
-	private UISprite ContainerTutor;
+	private TextureRect Highlight;
+	private TextureRect ContainerNorm;
+	private TextureRect ContainerAction;
+	private TextureRect ContainerTutor;
 	private Node ContainerShadowHints;
-	private UISprite StickNorm;
-	private UISprite StickAction;
+	private TextureRect StickNorm;
+	private TextureRect StickAction;
 	private Node StickTutor;
 
 	public StickUnit[] StickUnits;

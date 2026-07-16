@@ -17,7 +17,7 @@ namespace SF3.Items
 
 		public static SubtypeButton CurrentlySelected;
 
-		private TweenPosition tweenPosition;
+		private Tween tweenPosition;
 
 		private bool inited;
 
@@ -35,11 +35,9 @@ namespace SF3.Items
 			if (!inited)
 			{
 				inited = true;
-				tweenPosition = subTypeButton.Node.AddComponent<TweenPosition>();
-				tweenPosition.duration = 0.15f;
-				tweenPosition.from = subTypeButton.Position;
-				tweenPosition.to = tweenPosition.from + new Vector3(14f, 0f, 0f);
-				tweenPosition.enabled = false;
+				tweenPosition = subTypeButton.Node.CreateTween();
+				tweenPosition.TweenProperty(subTypeButton, "position", subTypeButton.Position + new Vector3(14f, 0f, 0f), 0.15f);
+				tweenPosition.Stop();
 				Collider = subTypeButton.GetNode<Area3D>("Area3D");
 			}
 		}

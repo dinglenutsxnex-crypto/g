@@ -69,7 +69,7 @@ namespace SF3.Moves
 
 		private float time;
 
-		private Coroutine checker;
+		private GodotObject checker;
 
 		public TriggerActionHotGround(Node yamlNode)
 			: base(EActionType.HOT_GROUND, yamlNode)

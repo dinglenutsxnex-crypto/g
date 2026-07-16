@@ -28,7 +28,7 @@ namespace Network.core
 		protected SFSProtocol _protocol;
 		protected SFSGameData _data;
 		private SmartFox _sfs;
-		private Coroutine timeOutCoroutine;
+		private GodotObject timeOutCoroutine;
 		private RequestHistory requestHistory = new RequestHistory();
 		private bool ENABLE_DEBUG;
 		private string[] ignoredCmdForLogging;
@@ -311,7 +311,7 @@ namespace Network.core
 		private int send(string cmd, SFSObject sfs, float timeout, Action<NetworkEvent> callback = null, object data = null)
 		{
 			int @int = sfs.GetInt("id");
-			Coroutine timeoutCoroutine = Routiner.GoDelayed(onRequestTimeout(@int), timeout);
+			GodotObject timeoutCoroutine = Routiner.GoDelayed(onRequestTimeout(@int), timeout);
 			requestHistory.AddRequest(@int, new RequestObject
 			{
 				cmd = cmd,
