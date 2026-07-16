@@ -4,14 +4,11 @@ using Network.core.events;
 
 public class RefreshBattlesNetworkState : TCPNetworkState
 {
-	public override void _Ready()
-	{
-		base._Ready();
-	}
+	public override void TCPStart(object data) { }
+	public override void TCPStop() { }
 
-	protected override void OnEnter()
+	public void OnEnter()
 	{
-		base.OnEnter();
 		SendRefreshRequest();
 	}
 

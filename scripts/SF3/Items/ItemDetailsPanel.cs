@@ -2,6 +2,7 @@
 // [MONO] Original used NGUI (UISprite, Object.Instantiate, UIProgressBar).
 // Needs full UI rebuild with Godot Control nodes.
 using Godot;
+using Nekki.UI;
 
 namespace SF3.Items
 {

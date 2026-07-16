@@ -7,6 +7,7 @@ using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 using SF3.UserData;
 using Godot;
+using SF3.Moves;
 namespace SF3.Moves
 {
 	public partial class MovesParser

@@ -2,6 +2,7 @@ using Nekki.Yaml;
 using Node = Nekki.Yaml.Node;
 using SF3.Effects;
 using Godot;
+using Nekki.Yaml;
 namespace SF3.Moves
 {
 	public partial class TriggerActionShakeCamera3D : TriggerAction

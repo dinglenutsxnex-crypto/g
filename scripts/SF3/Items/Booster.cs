@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Godot;
+using Nekki.Yaml;
 using Nekki;
 using Nekki.Yaml;
 using SimpleJSON;
@@ -228,9 +229,9 @@ namespace SF3.Items
 			return booster;
 		}
 
-		public override List<YamlNode> ToYaml()
+		public override List<Node> ToYaml()
 		{
-			List<YamlNode> list = new List<YamlNode>();
+			List<Node> list = new List<Node>();
 			list.Add(new Scalar("ID", instance_id.ToString()));
 			list.Add(new Scalar("ModelID", base.id.ToString()));
 			if (equipments == null)
@@ -239,7 +240,7 @@ namespace SF3.Items
 			}
 			if (equipments.Count > 0)
 			{
-				List<YamlNode> list2 = new List<YamlNode>(equipments.Count);
+				List<Node> list2 = new List<Node>(equipments.Count);
 				foreach (BaseItem equipment in equipments)
 				{
 					list2.Add(new Mapping("Equipment", equipment.ToYaml()));
@@ -248,7 +249,7 @@ namespace SF3.Items
 			}
 			if (perks.Count > 0)
 			{
-				List<YamlNode> list3 = new List<YamlNode>(perks.Count);
+				List<Node> list3 = new List<Node>(perks.Count);
 				foreach (BaseItem perk in perks)
 				{
 					list3.Add(new Mapping("Perk", perk.ToYaml()));
@@ -257,10 +258,10 @@ namespace SF3.Items
 			}
 			if (currencies.Count > 0)
 			{
-				List<YamlNode> list4 = new List<YamlNode>(currencies.Count);
+				List<Node> list4 = new List<Node>(currencies.Count);
 				foreach (Currency currency in currencies)
 				{
-					list4.Add(new Mapping("Currency", new List<YamlNode>
+					list4.Add(new Mapping("Currency", new List<Node>
 					{
 						new Scalar("Type", currency.CurrencyType.ToString()),
 						new Scalar("Value", currency.Value.ToString())

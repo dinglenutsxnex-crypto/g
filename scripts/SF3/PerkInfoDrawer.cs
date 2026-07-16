@@ -3,6 +3,8 @@
 // Needs full UI rebuild with Godot Control nodes.
 using System.Collections.Generic;
 using Godot;
+using Nekki.UI;
+using SF3.Items;
 
 namespace SF3
 {

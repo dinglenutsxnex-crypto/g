@@ -57,9 +57,9 @@ namespace SF3.GameModels
 
 		public Node3D glowBoundsMesh;
 
-		private Godot.RenderTexture mainTexturePreRender;
+		private Godot.ImageTexture mainTexturePreRender;
 
-		private Godot.RenderTexture shadowFormTexturePreRender;
+		private Godot.ImageTexture shadowFormTexturePreRender;
 
 		private bool isTrail;
 

@@ -1,5 +1,6 @@
 using System;
 using Nekki.Yaml;
+using Nekki.Yaml;
 using SF3.UserData;
 namespace SF3.Moves
 {

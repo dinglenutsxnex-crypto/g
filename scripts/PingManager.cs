@@ -3,6 +3,9 @@
 // FLAGGED: original used coroutines (IEnumerator/StartCoroutine) - needs manual async/signal redesign.
 using Godot;
 using System;
+using Google.Protobuf.WellKnownTypes;
+using common;
+using Timestamp = Google.Protobuf.WellKnownTypes.Timestamp;
 
 public class PingManager
 {

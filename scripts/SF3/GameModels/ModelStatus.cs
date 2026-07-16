@@ -1,7 +1,7 @@
 using System;
 namespace SF3.GameModels
 {
-	public partial class ModelStatus
+	public abstract partial class ModelStatus
 	{
 		public enum EStatusType
 		{

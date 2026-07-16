@@ -1,4 +1,4 @@
-public partial class UIButtonNotInteractive : Button
+public partial class UIButtonNotInteractive : Godot.Button
 {
 	private bool mInitDone;
 	private bool mState;

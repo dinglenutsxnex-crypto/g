@@ -16,6 +16,18 @@ public class UserBadgesManager : Node
 		get { return _instance; }
 	}
 
+	public enum BadgeTypes
+	{
+		Inventory,
+		Perks,
+		Boosters,
+		Shop
+	}
+
+	public interface IBadgeItem
+	{
+	}
+
 	public override void _Ready()
 	{
 		base._Ready();
@@ -47,6 +59,17 @@ public class UserBadgesManager : Node
 	{
 		return new List<string>(_badges);
 	}
+
+	public void Reset(BadgeTypes badgeType, object data) { GD.Print("STUB: UserBadgesManager.Reset"); }
+	public int GetNewPerksFor(object item) { GD.Print("STUB: UserBadgesManager.GetNewPerksFor"); return 0; }
+	public void AddItem(BadgeTypes badgeType, object item) { GD.Print("STUB: UserBadgesManager.AddItem"); }
+	public void RemoveItem(object item) { GD.Print("STUB: UserBadgesManager.RemoveItem"); }
+	public void Clear(BadgeTypes badgeType) { GD.Print("STUB: UserBadgesManager.Clear"); }
+	public void RegisterUnit(object unit) { }
+	public void UnregisterUnit(object unit) { }
+	public void UpdateItemsFor(object item) { }
+	public List<object> WhichItemsisNew(BadgeTypes badgeType, object items) { return new List<object>(); }
+	public int Count { get { return _badges.Count; } }
 
 	public override void _ExitTree()
 	{

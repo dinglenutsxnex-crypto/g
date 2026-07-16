@@ -1,11 +1,12 @@
+using Godot;
 using System;
 
 [Serializable]
 public class UniversalLbl
 {
-	public Label label;
+	public Godot.Label label;
 
-	public Label uiLabel;
+	public Godot.Label uiLabel;
 
 	public string Text
 	{

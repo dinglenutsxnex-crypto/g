@@ -3,6 +3,7 @@ using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 using SF3_Attributes;
 using Godot;
+using Nekki.Yaml;
 namespace SF3.Moves
 {
 	public partial class TriggerActionSetAttribute : TriggerAction

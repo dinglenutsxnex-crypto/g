@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using SF3.GameModels;
 using Godot;
+using SF3.Moves;
 namespace SF3.Moves
 {
 	public partial class MovesController : Node

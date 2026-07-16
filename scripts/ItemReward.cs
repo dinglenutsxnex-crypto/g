@@ -1,5 +1,6 @@
 // ⚠️ STUB: needs full port — original used NGUI NekkiUISprite
 using Godot;
+using Nekki.UI;
 using SF3.Items;
 using SF3.Settings;
 

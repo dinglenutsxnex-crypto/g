@@ -50,7 +50,7 @@ namespace SF3.GameModels
 		public RepulsionRect repulsionRect { get; private set; }
 		public List<Node3D> floorHitTransforms { get; private set; }
 		public SkeletonRagdoll skeletonRagdoll { get; private set; }
-		public event Action<SkeletonObject, Collision> OnCollision = delegate
+		public event Action<SkeletonObject, KinematicCollision3D> OnCollision = delegate
 		{
 		};
 		public void CreateSkeleton(Node3D parentBoneNode3D, XmlElement bonesDataNode, string mirroringDuplicateIndex)
@@ -397,9 +397,9 @@ namespace SF3.GameModels
 		{
 			return boneMirrorContainer.GetBoneMirrorerData(boneID);
 		}
-		private void OnCollisionEnter(Collision collision)
+		private void OnCollisionEnter(KinematicCollision3D KinematicCollision3D)
 		{
-			this.OnCollision(this, collision);
+			this.OnCollision(this, KinematicCollision3D);
 		}
 	}
 }

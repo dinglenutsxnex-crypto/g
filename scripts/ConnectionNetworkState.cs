@@ -2,9 +2,12 @@ using System;
 using Godot;
 using Network.core.events;
 
-public class ConnectionNetworkState : TCPNetworkState
-{
-	protected void OnEnter()
+	public class ConnectionNetworkState : TCPNetworkState
+	{
+		public override void TCPStart(object data) { }
+		public override void TCPStop() { }
+
+		protected void OnEnter()
 	{
 		base.OnEnter();
 		GD.Print("ConnectionNetworkState: Connecting...");

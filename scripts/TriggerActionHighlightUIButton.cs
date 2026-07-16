@@ -3,6 +3,7 @@ using Nekki.Yaml;
 using Node = Nekki.Yaml.Node;
 using SF3.Moves;
 using Godot;
+using Nekki.Yaml;
 internal class TriggerActionHighlightButton : TriggerActionQuest
 {
 	private List<string> _ids;

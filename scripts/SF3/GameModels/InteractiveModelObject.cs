@@ -70,9 +70,9 @@ namespace SF3.GameModels
 			droppedInteractiveObjects.Clear();
 		}
 
-		public void OnCollision(SkeletonObject skeletonObject, Collision collision)
+		public void OnCollision(SkeletonObject skeletonObject, KinematicCollision3D KinematicCollision3D)
 		{
-			if (FloorController.Instance.IsFloor(collision.gameObject))
+			if (FloorController.Instance.IsFloor(KinematicCollision3D.gameObject))
 			{
 				string materialName = modelObject.modelMaterials.modelMaterials[modelObject.skeletons.IndexOf(skeletonObject)].materialName;
 				BattleController.ThrowEvent(new BattleEventArgs(ETriggerEvents.EVENT_ITEM_FLOOR_HIT, 1, new StrikeData

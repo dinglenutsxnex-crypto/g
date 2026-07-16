@@ -11,7 +11,7 @@ namespace SF3.Tactics
 			random = 1,
 			aHitsB = 2,
 			bHitsA = 3,
-			collision = 4
+			KinematicCollision3D = 4
 		}
 
 		public Type type = Type.aHitsB;

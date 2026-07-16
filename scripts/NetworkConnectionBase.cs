@@ -1,4 +1,5 @@
 using System;
+using Google.Protobuf.WellKnownTypes;
 using Google.Protobuf;
 using Nekki;
 using Network.core;
@@ -6,6 +7,7 @@ using Network.core.data;
 using Network.core.events;
 using Godot;
 using common;
+using Timestamp = Google.Protobuf.WellKnownTypes.Timestamp;
 public partial class NetworkConnectionBase : SFSConnection
 {
 	protected bool joined_zone;

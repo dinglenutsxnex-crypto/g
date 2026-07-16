@@ -3,6 +3,7 @@ using Node = Nekki.Yaml.Node;
 using SF3;
 using SF3.Moves;
 using Godot;
+using Nekki.Yaml;
 public partial class TriggerActionCenterCameraToMapPoint : TriggerActionQuest
 {
 	private readonly Vector2 _position;

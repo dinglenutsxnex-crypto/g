@@ -68,7 +68,7 @@ public partial class BoosterpackItem : ReelItem
 	{
 		base.Item = baseItem;
 	}
-	public override void ShowRewardStatus(RewardStatus status)
+	public void ShowRewardStatus(RewardStatus status)
 	{
 		_rewardStatusLbl.Visible = true;
 	}

@@ -18,9 +18,9 @@ namespace SF3.GameModels
 
 		public GradientInfo gradientInfo;
 
-		private Godot.RenderTexture _mainTexturePreRender;
+		private Godot.ImageTexture _mainTexturePreRender;
 
-		private Godot.RenderTexture _shadowFormPreRender;
+		private Godot.ImageTexture _shadowFormPreRender;
 
 		private static readonly string[] FOLDER_SEPARATOR;
 
@@ -296,7 +296,7 @@ namespace SF3.GameModels
 				{
 					throw new Exception(string.Format("Cant load skin object mesh with name [{0}]", value));
 				}
-				// STUB: LayerMask.NameToLayer("CharacterAndFoe") → Godot collision layers
+				// STUB: LayerMask.NameToLayer("CharacterAndFoe") → Godot KinematicCollision3D layers
 				ModelSkin componentInChildren = null; // STUB: GetComponentInChildren<ModelSkin>()
 				attributeNode = item.GetAttributeNode("MirroringDuplicate");
 				if (attributeNode != null)

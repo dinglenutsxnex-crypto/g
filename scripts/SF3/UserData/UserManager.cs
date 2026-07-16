@@ -17,6 +17,6 @@ namespace SF3.UserData
         }
 
         public void Initialize() { }
-        public void UpdateUserData(Google.Protobuf.IMessage playerData) { }
+        public void UpdateUserData(object playerData) { }
     }
 }

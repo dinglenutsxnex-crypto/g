@@ -4,6 +4,7 @@ using SF3;
 using SF3.Items;
 using SF3_Attributes;
 using Godot;
+using Nekki.UI;
 
 public partial class RewardInfo : Control
 {

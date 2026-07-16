@@ -1,3 +1,4 @@
+using Godot;
 using System.Collections;
 using Nekki.Yaml;
 using SF3.GameModels;
@@ -71,7 +72,7 @@ namespace SF3.Moves
 
 		private GodotObject checker;
 
-		public TriggerActionHotGround(Node yamlNode)
+		public TriggerActionHotGround(Nekki.Yaml.Node yamlNode)
 			: base(EActionType.HOT_GROUND, yamlNode)
 		{
 			TryGetFloat(out time, "Duration", 0f, string.Empty);

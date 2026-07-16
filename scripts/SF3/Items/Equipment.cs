@@ -1,8 +1,10 @@
 using System;
+using Nekki.Yaml;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Godot;
+using Nekki.Yaml;
 using Nekki;
 using Nekki.Yaml;
 using SF3.Settings;
@@ -183,21 +185,21 @@ namespace SF3.Items
 			}
 		}
 
-		public override List<YamlNode> ToYaml()
+		public override List<Node> ToYaml()
 		{
-			List<YamlNode> list = new List<YamlNode>();
+			List<Node> list = new List<Node>();
 			list.Add(new Scalar("ID", base.id.ToString()));
 			list.Add(new Scalar("StackLevel", _stackLevel.ToString(CultureInfo.InvariantCulture)));
 			list.Add(new Scalar("Equipped", _equipped ? "1" : "0"));
 			if (_slots != null && _slots.Any((ItemSlot slot) => slot.GetPerk() != null))
 			{
-				List<YamlNode> list2 = new List<YamlNode>();
+				List<Node> list2 = new List<Node>();
 				foreach (ItemSlot slot2 in _slots)
 				{
 					Perk perk = slot2.GetPerk();
 					if (perk != null)
 					{
-						list2.Add(new Mapping("Perk", new List<YamlNode>
+						list2.Add(new Mapping("Perk", new List<Node>
 						{
 							new Scalar("SlotIndex", slot2.GetSlotIndex().ToString()),
 							new Scalar("ID", perk.id.ToString()),

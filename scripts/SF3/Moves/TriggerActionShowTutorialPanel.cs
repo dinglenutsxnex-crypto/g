@@ -1,6 +1,7 @@
 using Nekki.Yaml;
 using Node = Nekki.Yaml.Node;
 using Godot;
+using Nekki.Yaml;
 namespace SF3.Moves
 {
 	public partial class TriggerActionShowTutorialPanel : TriggerActionTutorialPanel

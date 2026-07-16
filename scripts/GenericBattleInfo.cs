@@ -1,4 +1,5 @@
 using System;
+using Nekki.Yaml;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
@@ -148,6 +149,36 @@ public class GenericBattleInfo : IBattleInfo, ICloneable
 		mapping.Add(new Scalar("BattleCounter", _battleCounter.ToString()));
 		mapping.Add(new Sequence("Battles", _battles.Select((BattleInfo bt) => bt.ToYAML()).Cast<YamlNode>().ToList()));
 		return mapping;
+	}
+
+	public JSONClass ToJSON()
+	{
+		JSONClass json = new JSONClass();
+		json["ID"] = new JSONData(GetID().ToString());
+		json["CurrentBattleIndex"] = new JSONData(_currentBattleIndex.ToString());
+		json["Hidden"] = new JSONData(_hidden ? "1" : string.Empty);
+		json["Available"] = new JSONData(_available ? string.Empty : "0");
+		json["BattleCounter"] = new JSONData(_battleCounter.ToString());
+		JSONArray battlesArr = new JSONArray();
+		foreach (var bt in _battles)
+			battlesArr.Add(bt.ToJSON());
+		json["Battles"] = battlesArr;
+		return json;
+	}
+
+	public void SetExpirationTime()
+	{
+		_expirationTime = DateTime.UtcNow.AddHours(1);
+	}
+
+	public void MergeWith(Battle battleValue, int battleIndex)
+	{
+		if (battleValue != null)
+		{
+			_battleCounter = battleValue.BattleCounter;
+			_currentBattleIndex = _battleCounter % _battles.Count;
+			if (_currentBattleIndex < 0) _currentBattleIndex = 0;
+		}
 	}
 
 	public void SetBattleHidden(bool value)

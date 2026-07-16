@@ -3,6 +3,13 @@ using Godot;
 
 public class MapBattleButton : Node
 {
+	public enum DecorationType
+	{
+		None,
+		Available,
+		Unavailable
+	}
+
 	[Export]
 	public Button button;
 

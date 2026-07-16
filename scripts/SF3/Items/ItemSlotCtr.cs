@@ -2,8 +2,10 @@
 // [MONO] Original used NGUI (UIButton, NekkiUISprite, EventDelegate).
 // Needs full UI rebuild with Godot Control nodes.
 using System;
+using Nekki.UI;
 using System.Collections.Generic;
 using Godot;
+using Nekki.UI;
 
 namespace SF3.Items
 {

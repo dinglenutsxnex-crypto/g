@@ -2,8 +2,10 @@
 // [MONO] Original used NGUI (UISprite, UILabel, UIButton) + DOTween.
 // Needs full UI rebuild with Godot Control nodes.
 using System;
+using Nekki.UI;
 using System.Collections.Generic;
 using Godot;
+using Nekki.UI;
 
 namespace SF3.Items
 {
@@ -100,13 +102,13 @@ namespace SF3.Items
 		[Export]
 		private float _upgradeShowAttrTime = 1f;
 
-		private Sequence _upgradeAttributesSequence;
+		private Godot.Tween _upgradeAttributesSequence;
 		private SF3.UserData.ShopItem _currentShopItem;
 
-		public new Node gameObject { get; private set; }
-		public new Node3D transform { get; private set; }
+		public Node gameObject { get; private set; }
+		public Node3D transform { get; private set; }
 
-		public Collider OverlapCollider { get; private set; }
+		public Godot.Area3D OverlapCollider { get; private set; }
 		public Button BuyForCoinsBtn { get; private set; }
 		public Button BuyForBonusBtn { get; private set; }
 
@@ -114,7 +116,7 @@ namespace SF3.Items
 		{
 			gameObject = this;
 			transform = this as Node3D;
-			OverlapCollider = gameObject.GetComponent<Collider>();
+			OverlapCollider = GetNodeOrNull<Godot.Area3D>("OverlapCollider");
 			if (_attributesViewSettins == null || _attributesViewSettins.Length == 0)
 			{
 				_attributesViewSettins = new AttributesViewSettings[1]

@@ -2,10 +2,13 @@ using System;
 using Godot;
 using Network.core.events;
 
-public class BalancerNetworkState : TCPNetworkState
-{
-	private int _retryCount;
-	private int _maxRetries = 3;
+	public class BalancerNetworkState : TCPNetworkState
+	{
+		private int _retryCount;
+		private int _maxRetries = 3;
+
+		public override void TCPStart(object data) { }
+		public override void TCPStop() { }
 
 	protected void OnEnter()
 	{

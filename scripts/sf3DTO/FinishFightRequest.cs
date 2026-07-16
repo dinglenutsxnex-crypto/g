@@ -1,4 +1,5 @@
 using System;
+using Google.Protobuf.WellKnownTypes;
 using System.Collections.Generic;
 
 namespace sf3DTO

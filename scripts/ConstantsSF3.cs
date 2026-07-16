@@ -51,6 +51,13 @@ public static class ConstantsSF3
 		Accessory
 	}
 
+	public interface IBadgeItem
+	{
+		int Id { get; }
+		string Name { get; }
+		string Icon { get; }
+	}
+
 	public static string GetVersion()
 	{
 		return VERSION;

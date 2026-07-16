@@ -1,7 +1,9 @@
 using System;
+using Nekki.Yaml;
 using System.Collections.Generic;
 using System.Globalization;
 using Godot;
+using Nekki.Yaml;
 using Nekki.Yaml;
 using SF3.UserData;
 using SimpleJSON;
@@ -107,9 +109,9 @@ namespace SF3.Items
 			return list;
 		}
 
-		public override List<YamlNode> ToYaml()
+		public override List<Node> ToYaml()
 		{
-			List<YamlNode> list = new List<YamlNode>();
+			List<Node> list = new List<Node>();
 			list.Add(new Scalar("ID", base.id.ToString()));
 			list.Add(new Scalar("StackLevel", _stackLevel.ToString(CultureInfo.InvariantCulture)));
 			return list;

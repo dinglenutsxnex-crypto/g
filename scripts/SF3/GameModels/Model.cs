@@ -1,7 +1,9 @@
 using System;
+using Nekki;
 using System.Collections.Generic;
 using System.Reflection;
 using Godot;
+using Nekki;
 using Nekki;
 using SF3.Effects;
 using SF3.Items;
@@ -1152,7 +1154,7 @@ namespace SF3.GameModels
 			childModels = new List<Model>();
 			modelAnimation = new ModelAnimation(this);
 			modelMoves = new ModelMoves();
-			// STUB: LayerMask.NameToLayer("CharacterAndFoe") → collision layer
+			// STUB: LayerMask.NameToLayer("CharacterAndFoe") → KinematicCollision3D layer
 			modelDessolveWeapon = new ModelDissolveWeapon(modelComponents, modelShadowForm, modelAnimation);
 			Activate(false);
 			if (modelID == 1)
