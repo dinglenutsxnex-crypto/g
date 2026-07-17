@@ -27,7 +27,7 @@ public partial class CameraConfiguration : Node
 		public float camZOffset;
 	}
 
-	[Export] public CameraSettings[] settings;
+	public CameraSettings[] settings;
 
 	public static CameraSettings Current { get; private set; }
 

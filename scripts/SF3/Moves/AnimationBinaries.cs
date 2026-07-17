@@ -84,7 +84,7 @@ namespace SF3.Moves
 			for (int j = 0; j < frames.Length; j++)
 			{
 				frames[j] = new AnimationFrame();
-				frames[j].bonesAnimationPlayer = new AnimatedNode3D[bonesIDs.Length];
+				frames[j].bonesAnimation = new AnimatedTransform[bonesIDs.Length];
 				for (int k = 0; k < bonesIDs.Length; k++)
 				{
 					int num = j * bonesIDs.Length * 7 + k * 7;
@@ -95,51 +95,51 @@ namespace SF3.Moves
 					newRotation.y = array[num + 4];
 					newRotation.z = array[num + 5];
 					newRotation.w = array[num + 6];
-					frames[j].bonesAnimationPlayer[k] = new AnimatedNode3D(newPosition, newRotation);
+					frames[j].bonesAnimation[k] = new AnimatedTransform(newPosition, newRotation);
 				}
 			}
 		}
-		public void CopyFrameTransformByIndex(int frameNumber, int boneIndex, AnimatedNode3D copyTo)
+		public void CopyFrameTransformByIndex(int frameNumber, int boneIndex, AnimatedTransform copyTo)
 		{
 			if (boneIndex < 0)
 			{
-				AnimatedNode3D.CopyBoneNode3D(AnimatedNode3D.IDENTITY, copyTo);
+				AnimatedTransform.CopyBoneTransform(AnimatedTransform.IDENTITY, copyTo);
 			}
 			else
 			{
-				AnimatedNode3D.CopyBoneNode3D(frames[frameNumber].bonesAnimationPlayer[boneIndex], copyTo);
+				AnimatedTransform.CopyBoneTransform(frames[frameNumber].bonesAnimation[boneIndex], copyTo);
 			}
 		}
-		public void CopyFrameTransformByID(int frameNumber, int boneID, AnimatedNode3D copyTo)
+		public void CopyFrameTransformByID(int frameNumber, int boneID, AnimatedTransform copyTo)
 		{
 			int boneIndexByID = GetBoneIndexByID(boneID);
 			if (boneIndexByID < 0)
 			{
-				AnimatedNode3D.CopyBoneNode3D(AnimatedNode3D.IDENTITY, copyTo);
+				AnimatedTransform.CopyBoneTransform(AnimatedTransform.IDENTITY, copyTo);
 			}
 			else
 			{
-				AnimatedNode3D.CopyBoneNode3D(frames[frameNumber].bonesAnimationPlayer[boneIndexByID], copyTo);
+				AnimatedTransform.CopyBoneTransform(frames[frameNumber].bonesAnimation[boneIndexByID], copyTo);
 			}
 		}
-		public void CopyFrameTransforms(int frameNumber, AnimatedNode3D[] copyTo)
+		public void CopyFrameTransforms(int frameNumber, AnimatedTransform[] copyTo)
 		{
 			if (frameNumber >= frames.Length)
 			{
 				throw new Exception(string.Format("frameNumber {0} is out of range frames {1}", frameNumber, frames.Length));
 			}
-			for (int i = 0; i < frames[frameNumber].bonesAnimationPlayer.Length; i++)
+			for (int i = 0; i < frames[frameNumber].bonesAnimation.Length; i++)
 			{
-				AnimatedNode3D.CopyBoneNode3D(frames[frameNumber].bonesAnimationPlayer[i], copyTo[i]);
+				AnimatedTransform.CopyBoneTransform(frames[frameNumber].bonesAnimation[i], copyTo[i]);
 			}
 		}
-		public void CopyFrameTransforms(int frameNumber, Dictionary<int, AnimatedNode3D> copyTo)
+		public void CopyFrameTransforms(int frameNumber, Dictionary<int, AnimatedTransform> copyTo)
 		{
-			for (int i = 0; i < frames[frameNumber].bonesAnimationPlayer.Length; i++)
+			for (int i = 0; i < frames[frameNumber].bonesAnimation.Length; i++)
 			{
 				if (copyTo.ContainsKey(bonesIDs[i]))
 				{
-					AnimatedNode3D.CopyBoneNode3D(frames[frameNumber].bonesAnimationPlayer[i], copyTo[bonesIDs[i]]);
+					AnimatedTransform.CopyBoneTransform(frames[frameNumber].bonesAnimation[i], copyTo[bonesIDs[i]]);
 					copyTo[bonesIDs[i]].animateThisFrame = true;
 				}
 			}

@@ -12,7 +12,6 @@ public partial class CardAnimationContainer : Node3D
 		public float duration = 1f;
 	}
 
-	[Export]
 	public Animation[] animations;
 
 	private Tween _currentTween;

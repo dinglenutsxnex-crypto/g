@@ -55,7 +55,6 @@ namespace SF3.Items
 		private Vector3 _coinsBtnPos;
 		private Vector3 _bonusBtnPos;
 
-		[Export]
 		private AttributesViewSettings[] _attributesViewSettins;
 
 		[Export]

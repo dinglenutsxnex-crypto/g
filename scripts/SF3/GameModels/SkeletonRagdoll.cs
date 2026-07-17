@@ -11,7 +11,7 @@ namespace SF3.GameModels
 		public string[] ignoredTransforms;
 
 		private HashSet<string> _ignoredTransformsSet;
-		private GenericJoint3D[] _joints;
+		private Joint3D[] _joints;
 		private CollisionObject3D[] _colliders;
 		private RigidBody3D[] _rigidBodies;
 		private bool _hasIgnoredColliders;
@@ -42,7 +42,7 @@ namespace SF3.GameModels
 
 		private void CollectJoints()
 		{
-			var all = new List<GenericJoint3D>();
+			var all = new List<Joint3D>();
 			GetComponentsInChildren(all);
 			_joints = ApplyFilterIgnored(all).ToArray();
 		}

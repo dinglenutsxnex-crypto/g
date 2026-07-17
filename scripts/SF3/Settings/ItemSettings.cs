@@ -28,9 +28,7 @@ namespace SF3.Settings
 			public string alias = string.Empty;
 		}
 
-		[Export]
 		private ItemsRaritySettings[] _itemsRaritySettings;
-		[Export]
 		private ItemsFactionSettings[] _itemsFactionSettings;
 
 		public Color lowerAttributeColor;

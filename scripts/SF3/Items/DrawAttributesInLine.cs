@@ -177,11 +177,18 @@ namespace SF3.Items
 			BottomRight
 		}
 
+		public enum OverflowBehavior
+		{
+			ShrinkContent,
+			ClampContent,
+			Overflow
+		}
+
 		public partial class LblProperties
 		{
 			public Vector2Int lblSize;
 
-			public Label.OverflowBehavior overflow;
+			public OverflowBehavior overflow;
 
 			public PivotType pivot;
 

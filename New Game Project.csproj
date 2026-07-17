@@ -8,4 +8,8 @@
     <PackageReference Include="Jint" Version="4.13.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="unity_scripts_ref/**" />
+    <Compile Remove="attached_assets/**" />
+  </ItemGroup>
 </Project>
