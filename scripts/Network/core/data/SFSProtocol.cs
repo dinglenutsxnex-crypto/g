@@ -3,6 +3,7 @@ using Google.Protobuf.WellKnownTypes;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Sfs2X.Entities.Data;
 using common;
 using Timestamp = Google.Protobuf.WellKnownTypes.Timestamp;
 
