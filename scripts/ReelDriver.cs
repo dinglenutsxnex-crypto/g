@@ -6,12 +6,12 @@ using SF3.Items;
 using SF3.UserData;
 using Godot;
 
-public class ReelDriver : Node
+public partial class ReelDriver : Node
 {
 	public delegate void ItemSelectedEventHandler(BaseItem item);
 	public delegate void ItemInsertedEventHadler(BaseItem item, PerkSlot slot);
 
-	public class SplineObject
+	public partial class SplineObject
 	{
 		public Node Obj;
 		public BaseItem Item;

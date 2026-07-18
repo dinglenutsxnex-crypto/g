@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class passAnimationFrameToShader : Node3D
+public partial class passAnimationFrameToShader : Node3D
 {
 	public override void _Process(double delta)
 	{

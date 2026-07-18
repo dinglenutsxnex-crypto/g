@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class ItemCardDebugUI : Node
+public partial class ItemCardDebugUI : Node
 {
 	[Export]
 	public Label itemNameLabel;

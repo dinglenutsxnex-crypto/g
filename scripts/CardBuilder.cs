@@ -3,6 +3,6 @@
 using Godot;
 using System;
 
-public class CardBuilder : Node  // TODO: pick correct Godot base (CharacterBody3D / Area3D / RigidBody3D / Node)
+public partial class CardBuilder : Node  // TODO: pick correct Godot base (CharacterBody3D / Area3D / RigidBody3D / Node)
 {
 }

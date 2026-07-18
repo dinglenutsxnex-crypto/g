@@ -5,7 +5,7 @@ using Network.core.data;
 using Network.core.events;
 using Network.core;
 
-public class NetworkConnection : Node
+public partial class NetworkConnection : Node
 {
 	public static NetworkConnection current;
 	public string Server { get; set; }
@@ -24,12 +24,12 @@ public class NetworkConnection : Node
 	private bool _isConnected;
 	private Queue<NetworkEvent> _pendingEvents = new Queue<NetworkEvent>();
 
-	public class UserDataInfo
+	public partial class UserDataInfo
 	{
 		public AuthData Auth { get; set; }
 	}
 
-	public class AuthData
+	public partial class AuthData
 	{
 		public string Login { get; set; }
 		public string Token { get; set; }

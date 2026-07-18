@@ -1,0 +1,4 @@
+- [Build state & custom-class fixes](build-custom-class-fixes.md) — all CS0104/CS0246/CS0508/GD0001/GD0234 cleared; 2031 API-usage errors remain as next layer
+- [Next layer error catalogue](next-layer-errors.md) — full breakdown of CS1061/CS0117/CS0103/etc. patterns for the API-usage fix pass
+- [GlobalUsings strategy](global-usings-strategy.md) — why global using Godot causes Node/Color/Expression/Type ambiguity and the per-file alias fix pattern
+- [PackedArray stubs](packed-array-stubs.md) — Godot NuGet 4.4.0 lacks PackedVector3/2/Float32/Int32Array; stubbed in scripts/firstpass/GodotPackedArrayStubs.cs

@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class TooltipManager : Node
+public partial class TooltipManager : Node
 {
 	private static TooltipManager _instance;
 

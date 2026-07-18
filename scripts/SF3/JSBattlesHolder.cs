@@ -4,7 +4,7 @@ using Godot;
 using SF3.UserData;
 using sf3DTO;
 
-public class JSBattlesHolder : Node
+public partial class JSBattlesHolder : Node
 {
 	private List<object> _battles = new List<object>();
 

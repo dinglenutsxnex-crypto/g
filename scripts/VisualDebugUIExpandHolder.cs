@@ -1,6 +1,6 @@
 using Godot;
 
-public class VisualDebugUIExpandHolder : Node
+public partial class VisualDebugUIExpandHolder : Node
 {
 	private VisualDebugUI.Unit _unit;
 

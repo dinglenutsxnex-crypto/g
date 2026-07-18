@@ -6,7 +6,7 @@ using SF3.Items;
 using SF3.UserData;
 using Godot;
 
-public sealed class BattleInterface : ExtentionBehaviour, ISceneInitializationObject
+public sealed partial class BattleInterface : ExtentionBehaviour, ISceneInitializationObject
 {
 	private static BattleInterface _instance;
 	private ShadowPerksController _shadowPerks;

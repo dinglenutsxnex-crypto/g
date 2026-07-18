@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class OptimizedGlow : Node
+public partial class OptimizedGlow : Node
 {
 	[Export]
 	public float glowIntensity = 1.0f;

@@ -3,7 +3,7 @@ using System;
 
 namespace SF3
 {
-	public class PauseButton : UIModuleHolder
+	public partial class PauseButton : UIModuleHolder
 	{
 		public void OnPauseButtonClicked()
 		{

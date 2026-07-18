@@ -1,7 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 
-public class SpriteAlphaAnimation : Node
+public partial class SpriteAlphaAnimation : Node
 {
     public enum EAnimationStyle { LOOP = 0, PING_PONG = 1, ONCE = 2 }
 

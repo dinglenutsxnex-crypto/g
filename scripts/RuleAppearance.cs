@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using SF3;
 using SF3.GameModels;
 using sf3DTO;
+using Color = sf3DTO.Color;
 internal class RuleAppearance : Rule
 {
 	private string _head;

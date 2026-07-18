@@ -1,6 +1,8 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Google.Protobuf.WellKnownTypes;
+using Type = System.Type;
 
 namespace Network.core.events
 {

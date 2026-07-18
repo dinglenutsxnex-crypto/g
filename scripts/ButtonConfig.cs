@@ -1,4 +1,5 @@
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 
 public class ButtonConfig : LabelConfig
 {

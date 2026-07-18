@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class ModelsManager : Node
+public partial class ModelsManager : Node
 {
 	private static ModelsManager _instance;
 

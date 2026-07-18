@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Godot;
 using Jint.Native;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3;
 using SF3.GameModels;
 using SimpleJSON;

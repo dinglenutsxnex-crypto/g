@@ -10,7 +10,7 @@ using sf3DTO;
 
 namespace SF3
 {
-	public class MapController : UIModuleHolder
+	public partial class MapController : UIModuleHolder
 	{
 		public delegate void OnMapUpdateEventHandler();
 

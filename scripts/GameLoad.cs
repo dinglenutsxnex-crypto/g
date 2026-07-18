@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class GameLoad : Node
+public partial class GameLoad : Node
 {
 	private static GameLoad _instance;
 

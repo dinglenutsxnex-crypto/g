@@ -1,3 +1,4 @@
+using Godot;
 using System;
 using Google.Protobuf.WellKnownTypes;
 using System.Collections.Generic;

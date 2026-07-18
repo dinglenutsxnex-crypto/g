@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class CardAnimator : Node
+public partial class CardAnimator : Node
 {
 	public Action onAnimationEnd;
 

@@ -3,7 +3,7 @@ using System;
 
 namespace SF3.GameDebug
 {
-	public class DebugActionApplier : Node
+	public partial class DebugActionApplier : Node
 	{
 		public EDebugActions currentDebugAction;
 

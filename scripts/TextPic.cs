@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 [Tool]
-public class TextPic : RichTextLabel
+public partial class TextPic : RichTextLabel
 {
     private class Attributes
     {

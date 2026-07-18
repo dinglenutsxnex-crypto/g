@@ -4,10 +4,10 @@ using SF3.GameModels;
 
 namespace SF3.Effects
 {
-    public class CustomEffect : GameEffectBase
+    public partial class CustomEffect : GameEffectBase
     {
         [Serializable]
-        public class DelayedEffectActivation
+        public partial class DelayedEffectActivation
         {
             public Node3D effect;
             public float delay;

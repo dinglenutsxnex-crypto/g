@@ -6,7 +6,7 @@ using Nekki.UI;
 using SF3;
 using SF3.UserData;
 
-public class BaseModuleController : NekkiUIModule
+public partial class BaseModuleController : NekkiUIModule
 {
 	[Export]
 	private NekkiUIModule _currentModule;

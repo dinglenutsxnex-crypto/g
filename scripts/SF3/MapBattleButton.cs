@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class MapBattleButton : Node
+public partial class MapBattleButton : Node
 {
 	public enum DecorationType
 	{

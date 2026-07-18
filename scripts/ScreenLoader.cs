@@ -1,6 +1,6 @@
 using Godot;
 
-public class ScreenLoader : Node
+public partial class ScreenLoader : Node
 {
 	public override void _Ready()
 	{

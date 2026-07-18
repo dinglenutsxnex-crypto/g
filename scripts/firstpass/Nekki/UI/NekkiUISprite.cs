@@ -3,48 +3,51 @@ using System;
 
 namespace Nekki.UI
 {
-    public class NekkiUISprite : TextureRect
-    {
-        private static Texture2D _noImageTexture;
-        private string mSpriteName;
+	public partial class NekkiUISprite : TextureRect
+	{
+		private static ImageTexture _noImageTexture;
+		private string mSpriteName;
 
-        private static Texture2D GetNoImageTexture
-        {
-            get
-            {
-                if (_noImageTexture == null)
-                {
-                    _noImageTexture = new Texture2D(1, 1);
-                    _noImageTexture.SetPixel(0, 0, Colors.Red);
-                    _noImageTexture.Apply();
-                }
-                return _noImageTexture;
-            }
-        }
+		private static ImageTexture GetNoImageTexture
+		{
+			get
+			{
+				if (_noImageTexture == null)
+				{
+					Image img = Image.CreateEmpty(1, 1, false, Image.Format.Rgba8);
+					img.Fill(Colors.Red);
+					_noImageTexture = ImageTexture.CreateFromImage(img);
+				}
+				return _noImageTexture;
+			}
+		}
 
-        public string SpriteName
-        {
-            get { return mSpriteName; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    Texture = GetNoImageTexture;
-                    mSpriteName = string.Empty;
-                }
-                else if (mSpriteName != value)
-                {
-                    mSpriteName = value;
-                }
-            }
-        }
+		public float Size_X => Size.X;
+		public float Size_Y => Size.Y;
 
-        public void SetGrayscale(bool value) { }
+		public string SpriteName
+		{
+			get => mSpriteName;
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+				{
+					Texture = GetNoImageTexture;
+					mSpriteName = string.Empty;
+				}
+				else if (mSpriteName != value)
+				{
+					mSpriteName = value;
+				}
+			}
+		}
 
-        internal void Init()
-        {
-            if (Texture == null)
-                Texture = GetNoImageTexture;
-        }
-    }
+		public void SetGrayscale(bool value) { }
+
+		internal void Init()
+		{
+			if (Texture == null)
+				Texture = GetNoImageTexture;
+		}
+	}
 }

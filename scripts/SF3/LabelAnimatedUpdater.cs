@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class LabelAnimatedUpdater : Node
+public partial class LabelAnimatedUpdater : Node
 {
 	[Export]
 	public Label targetLabel;

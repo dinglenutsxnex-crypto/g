@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Nekki.Yaml;
 
 [Tool]
-public class OpenItemsYAML : Node
+public partial class OpenItemsYAML : Node
 {
     [Export] public string items;
     [Export] public string itemTypes;

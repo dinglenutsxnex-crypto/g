@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Jint.Native;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SimpleJSON;
 using Godot;
 

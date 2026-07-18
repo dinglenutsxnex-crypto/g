@@ -1,6 +1,6 @@
 using System;
 
-public class TextWrapper : TextPic
+public partial class TextWrapper : TextPic
 {
 	public Action onTextChage;
 

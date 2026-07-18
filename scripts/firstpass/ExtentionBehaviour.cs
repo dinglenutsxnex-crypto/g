@@ -1,11 +1,10 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
-public class ExtentionBehaviour : Node
+public partial class ExtentionBehaviour : Node
 {
 	private EventListener<CallEventArgs, int> eventListener = new EventListener<CallEventArgs, int>();
-
-	public new Node Name { get; set; }
 
 	protected void Log(object message)
 	{
@@ -30,6 +29,34 @@ public class ExtentionBehaviour : Node
 	protected void Invoke(Action action, float t)
 	{
 		GetTree().CreateTimer(t).Timeout += () => action();
+	}
+
+	/// <summary>
+	/// Unity-style GetComponent: checks self, then direct children.
+	/// </summary>
+	public T GetComponent<T>() where T : class
+	{
+		if (this is T self) return self;
+		foreach (Node child in GetChildren())
+			if (child is T c) return c;
+		return null;
+	}
+
+	/// <summary>
+	/// Unity-style GetComponentsInChildren: populates list with all matching nodes in the subtree.
+	/// </summary>
+	public void GetComponentsInChildren<T>(List<T> results) where T : Node
+	{
+		CollectDescendants(this, results);
+	}
+
+	private static void CollectDescendants<T>(Node parent, List<T> results) where T : Node
+	{
+		foreach (Node child in parent.GetChildren())
+		{
+			if (child is T t) results.Add(t);
+			CollectDescendants(child, results);
+		}
 	}
 
 	public override void _ExitTree()

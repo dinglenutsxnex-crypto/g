@@ -1,7 +1,7 @@
 using Godot;
 
 [Tool]
-public class HelloWorld : Node
+public partial class HelloWorld : Node
 {
 	public Font style;
 

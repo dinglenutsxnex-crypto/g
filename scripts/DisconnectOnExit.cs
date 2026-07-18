@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class DisconnectOnExit : Node
+public partial class DisconnectOnExit : Node
 {
 	private NetworkConnection _connection;
 

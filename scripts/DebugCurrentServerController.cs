@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class DebugCurrentServerController : Node
+public partial class DebugCurrentServerController : Node
 {
 	[Export]
 	private Label _serverLabel;

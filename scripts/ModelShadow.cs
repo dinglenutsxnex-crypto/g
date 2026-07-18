@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class ModelShadow : Node
+public partial class ModelShadow : Node
 {
 	[Export]
 	public bool castShadow = true;

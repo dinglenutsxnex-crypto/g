@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class GameDebugController : Node
+public partial class GameDebugController : Node
 {
 	private static GameDebugController _instance;
 

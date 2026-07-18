@@ -1,6 +1,7 @@
 using Godot;
 using Nekki;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 
 public class ImageConfig
 {

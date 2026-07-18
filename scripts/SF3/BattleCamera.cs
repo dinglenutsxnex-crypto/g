@@ -4,7 +4,7 @@ using System;
 
 namespace SF3
 {
-	public class BattleCamera : Node
+	public partial class BattleCamera : Node
 	{
 		[Export]
 		public float moveSmoothTime = 0.1f;

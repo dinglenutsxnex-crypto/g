@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class LookAtPlayer : Node
+public partial class LookAtPlayer : Node
 {
 	[Export]
 	public Node3D target;

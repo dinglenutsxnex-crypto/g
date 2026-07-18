@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 
 [Tool]
-public class ReelItemAnimation : Control, IReelItemAnimation
+public partial class ReelItemAnimation : Control, IReelItemAnimation
 {
     [Serializable]
     private class Animation
@@ -15,7 +15,6 @@ public class ReelItemAnimation : Control, IReelItemAnimation
         public float duration = 1f;
     }
 
-    [Export]
     private Animation[] animations;
 
     private string currentAnimation;

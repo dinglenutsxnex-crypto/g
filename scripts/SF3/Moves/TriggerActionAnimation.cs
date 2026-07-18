@@ -1,11 +1,12 @@
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 namespace SF3.Moves
 {
 	public partial class TriggerActionAnimationPlayer : TriggerAction
 	{
 		public TriggerActionAnimationPlayer(Node yamNode)
-			: base(EActionType.AnimationPlayer, yamNode)
+			: base(EActionType.ANIMATION, yamNode)
 		{
 			base.name = base.name.ToLower();
 		}

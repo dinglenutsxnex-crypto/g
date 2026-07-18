@@ -4,7 +4,7 @@ using Godot;
 using SF3;
 using SF3.UserData;
 
-public class QuestController : Node
+public partial class QuestController : Node
 {
 	private static QuestController _instance;
 

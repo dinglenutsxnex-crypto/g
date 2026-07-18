@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class LoginEmailDialogController : Node
+public partial class LoginEmailDialogController : Node
 {
 	[Export]
 	public LineEdit emailField;

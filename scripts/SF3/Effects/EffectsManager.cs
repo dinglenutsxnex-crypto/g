@@ -4,7 +4,7 @@ using Godot;
 
 namespace SF3.Effects
 {
-	public class EffectsManager : Node
+	public partial class EffectsManager : Node
 	{
 		private static EffectsManager _instance;
 

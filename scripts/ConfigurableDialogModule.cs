@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class ConfigurableDialogModule : NekkiUIModule
+public partial class ConfigurableDialogModule : NekkiUIModule
 {
 	public delegate void DialogOpened(DialogConfig config);
 

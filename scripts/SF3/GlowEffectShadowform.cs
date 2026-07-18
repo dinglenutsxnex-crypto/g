@@ -3,7 +3,7 @@ using Godot;
 namespace SF3
 {
     [Tool]
-    public class GlowEffectShadowform : Node3D
+    public partial class GlowEffectShadowform : Node3D
     {
         public enum GlowMode { Glow, AlphaGlow, SimpleGlow, SimpleAlphaGlow }
         public enum BlendMode { Additive, Multiply, Screen, Subtract }

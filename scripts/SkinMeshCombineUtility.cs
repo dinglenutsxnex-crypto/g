@@ -22,20 +22,20 @@ public static class SkinMeshCombineUtility
             {
                 if (s != ci.subMeshIndex) continue;
                 var arr = ci.mesh.SurfaceGetArrays(s);
-                totalVerts += ((PackedVector3Array)arr[(int)Mesh.ArrayType.Vertex]).Count;
-                totalTris += ((PackedInt32Array)arr[(int)Mesh.ArrayType.Index]).Count / 3;
+                totalVerts += ((Godot.PackedVector3Array)arr[(int)Mesh.ArrayType.Vertex]).Count;
+                totalTris += ((Godot.PackedInt32Array)arr[(int)Mesh.ArrayType.Index]).Count / 3;
             }
         }
 
-        PackedVector3Array dstVerts = new PackedVector3Array();
+        Godot.PackedVector3Array dstVerts = new Godot.PackedVector3Array();
         dstVerts.Resize(totalVerts);
-        PackedVector3Array dstNormals = new PackedVector3Array();
+        Godot.PackedVector3Array dstNormals = new Godot.PackedVector3Array();
         dstNormals.Resize(totalVerts);
-        PackedFloat32Array dstTangents = new PackedFloat32Array();
+        Godot.PackedFloat32Array dstTangents = new Godot.PackedFloat32Array();
         dstTangents.Resize(totalVerts * 4);
-        PackedVector2Array dstUvs = new PackedVector2Array();
+        Godot.PackedVector2Array dstUvs = new Godot.PackedVector2Array();
         dstUvs.Resize(totalVerts);
-        PackedVector2Array dstUvs2 = new PackedVector2Array();
+        Godot.PackedVector2Array dstUvs2 = new Godot.PackedVector2Array();
         dstUvs2.Resize(totalVerts);
 
         int offset = 0;
@@ -51,12 +51,12 @@ public static class SkinMeshCombineUtility
                 if (s != ci.subMeshIndex) continue;
 
                 var arr = ci.mesh.SurfaceGetArrays(s);
-                var srcVerts = (PackedVector3Array)arr[(int)Mesh.ArrayType.Vertex];
-                var srcNormals = (PackedVector3Array)arr[(int)Mesh.ArrayType.Normal];
-                var srcTangents = (PackedFloat32Array)arr[(int)Mesh.ArrayType.Tangent];
-                var srcUvs = (PackedVector2Array)arr[(int)Mesh.ArrayType.TexUV];
-                var srcUvs2 = (PackedVector2Array)arr[(int)Mesh.ArrayType.TexUV2];
-                var srcIndices = (PackedInt32Array)arr[(int)Mesh.ArrayType.Index];
+                var srcVerts = (Godot.PackedVector3Array)arr[(int)Mesh.ArrayType.Vertex];
+                var srcNormals = (Godot.PackedVector3Array)arr[(int)Mesh.ArrayType.Normal];
+                var srcTangents = (Godot.PackedFloat32Array)arr[(int)Mesh.ArrayType.Tangent];
+                var srcUvs = (Godot.PackedVector2Array)arr[(int)Mesh.ArrayType.TexUV];
+                var srcUvs2 = (Godot.PackedVector2Array)arr[(int)Mesh.ArrayType.TexUV2];
+                var srcIndices = (Godot.PackedInt32Array)arr[(int)Mesh.ArrayType.Index];
 
                 var t = ci.transform;
                 var invTransBasis = t.Basis.Inverse().Transposed();
@@ -84,7 +84,7 @@ public static class SkinMeshCombineUtility
                     }
                 }
 
-                PackedInt32Array dstIndices = new PackedInt32Array();
+                Godot.PackedInt32Array dstIndices = new Godot.PackedInt32Array();
                 dstIndices.Resize(srcIndices.Count);
                 for (int i = 0; i < srcIndices.Count; i++)
                     dstIndices[i] = srcIndices[i] + offset;
@@ -92,11 +92,11 @@ public static class SkinMeshCombineUtility
                 var dstArr = new Godot.Collections.Array();
                 dstArr.Resize((int)Mesh.ArrayType.Max);
 
-                PackedVector3Array surfVerts = new PackedVector3Array();
-                PackedVector3Array surfNormals = new PackedVector3Array();
-                PackedFloat32Array surfTangents = new PackedFloat32Array();
-                PackedVector2Array surfUvs = new PackedVector2Array();
-                PackedVector2Array surfUvs2 = new PackedVector2Array();
+                Godot.PackedVector3Array surfVerts = new Godot.PackedVector3Array();
+                Godot.PackedVector3Array surfNormals = new Godot.PackedVector3Array();
+                Godot.PackedFloat32Array surfTangents = new Godot.PackedFloat32Array();
+                Godot.PackedVector2Array surfUvs = new Godot.PackedVector2Array();
+                Godot.PackedVector2Array surfUvs2 = new Godot.PackedVector2Array();
 
                 for (int i = 0; i < srcVerts.Count; i++)
                 {

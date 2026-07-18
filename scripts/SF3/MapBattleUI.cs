@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class MapBattleUI : Node
+public partial class MapBattleUI : Node
 {
 	[Export]
 	public Button fightButton;

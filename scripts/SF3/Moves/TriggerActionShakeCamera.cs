@@ -32,7 +32,7 @@ namespace SF3.Moves
 			}
 		}
 		public TriggerActionShakeCamera3D(Node yamlNode)
-			: base(EActionType.SHAKE_Camera3D, yamlNode)
+			: base(EActionType.SHAKE_CAMERA, yamlNode)
 		{
 			if (!(yamlNode is Scalar))
 			{

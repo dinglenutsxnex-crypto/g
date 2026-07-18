@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class InventoryButton : Node
+public partial class InventoryButton : Node
 {
 	[Export]
 	public Button button;

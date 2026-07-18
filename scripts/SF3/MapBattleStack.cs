@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class MapBattleStack : Node
+public partial class MapBattleStack : Node
 {
 	private Stack<object> _battleStack = new Stack<object>();
 

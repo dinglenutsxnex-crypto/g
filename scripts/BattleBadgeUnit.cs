@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class BattleBadgeUnit : Node
+public partial class BattleBadgeUnit : Node
 {
 	private TextureRect _sprite;
 	private Label _label;

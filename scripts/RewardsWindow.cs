@@ -9,7 +9,7 @@ using SF3.Effects;
 using SF3.Items;
 using sf3DTO;
 
-public class RewardsWindow : NekkiUIModule
+public partial class RewardsWindow : NekkiUIModule
 {
 	private enum States
 	{

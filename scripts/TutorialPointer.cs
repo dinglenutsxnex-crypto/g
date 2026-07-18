@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class TutorialPointer : Node
+public partial class TutorialPointer : Node
 {
 	[Export]
 	public TextureRect pointerImage;

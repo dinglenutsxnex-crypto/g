@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class InfoBattleUI : Node
+public partial class InfoBattleUI : Node
 {
 	[Export]
 	public Label infoLabel;

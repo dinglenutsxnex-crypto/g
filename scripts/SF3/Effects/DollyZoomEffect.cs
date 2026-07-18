@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class DollyZoomEffect : Node
+public partial class DollyZoomEffect : Node
 {
 	[Export]
 	private Camera3D _camera;

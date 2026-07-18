@@ -1,4 +1,5 @@
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 namespace SF3.Moves
 {
@@ -7,7 +8,7 @@ namespace SF3.Moves
 		private readonly int _inOutFrames;
 		private readonly int _forFrames;
 		public TriggerActionPauseAnimationPlayer(Node yamlNode)
-			: base(EActionType.PAUSE_AnimationPlayer, yamlNode)
+			: base(EActionType.PAUSE_ANIMATION, yamlNode)
 		{
 			base.name = base.name.ToLower();
 			TryGetInt(out _inOutFrames, "InOutFrames", 0, string.Empty, this);

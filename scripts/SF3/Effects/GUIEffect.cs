@@ -5,7 +5,7 @@ using SF3.GameModels;
 
 namespace SF3.Effects
 {
-	public class GUIEffect : GameEffectBase
+	public partial class GUIEffect : GameEffectBase
 	{
 		public string side;
 

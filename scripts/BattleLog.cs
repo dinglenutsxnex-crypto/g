@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class BattleLog : Node
+public partial class BattleLog : Node
 {
 	private static BattleLog _instance;
 

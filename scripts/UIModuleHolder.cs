@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public abstract class UIModuleHolder : ExtentionBehaviour
+public abstract partial class UIModuleHolder : ExtentionBehaviour
 {
 	protected NekkiUIModule _nekkiUIModule;
 

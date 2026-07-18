@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class KeyboardController : AbstractController
+public partial class KeyboardController : AbstractController
 {
 	private static KeyboardController _instance;
 

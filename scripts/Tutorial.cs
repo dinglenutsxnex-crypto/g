@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 
 [Tool]
-public class Tutorial : Node2D
+public partial class Tutorial : Node2D
 {
     [Serializable]
-    public class ColorSync
+    public partial class ColorSync
     {
         private enum SyncDirrections { Forward, Backward }
         private Color _currentColor;
@@ -39,7 +39,7 @@ public class Tutorial : Node2D
         }
     }
 
-    [Export] public ColorSync Sync;
+    public ColorSync Sync;
     private static int _activeCount;
 
     public static Tutorial Instance { get; private set; }

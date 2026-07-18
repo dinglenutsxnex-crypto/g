@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class SF3FPSLogger : Node
+public partial class SF3FPSLogger : Node
 {
 	private static SF3FPSLogger _instance;
 

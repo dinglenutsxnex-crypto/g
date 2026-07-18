@@ -2,7 +2,7 @@ using System;
 using Godot;
 using Newtonsoft.Json;
 
-public class GlobalLoad : GlobalPath
+public partial class GlobalLoad : GlobalPath
 {
     public static string GetLoadTextInternal(string internalAlias, string appendedPath = "")
     {
@@ -60,7 +60,7 @@ public class GlobalLoad : GlobalPath
     }
 }
 
-public class TextFile : Resource
+public partial class TextFile : Resource
 {
     [Export]
     public string Text { get; set; }

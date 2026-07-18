@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class ExpCircle : Node
+public partial class ExpCircle : Node
 {
 	[Export]
 	public float fillAmount;

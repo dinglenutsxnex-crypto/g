@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Linq;
 
-public class UnityCollisionRecognizer : Node
+public partial class UnityCollisionRecognizer : Node
 {
 	private Area3D _collider;
 

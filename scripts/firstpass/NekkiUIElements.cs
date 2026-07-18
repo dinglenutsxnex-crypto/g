@@ -2,10 +2,10 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public class NekkiUIElements : Node
+public partial class NekkiUIElements : Node
 {
     [Serializable]
-    public class Element
+    public partial class Element
     {
         [Export]
         public string Name;
@@ -14,7 +14,6 @@ public class NekkiUIElements : Node
         public Node Widget;
     }
 
-    [Export]
     public List<Element> Elements;
 
     public Node this[string index]

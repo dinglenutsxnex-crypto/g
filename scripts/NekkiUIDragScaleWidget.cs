@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class NekkiUIDragScaleWidget : Node
+public partial class NekkiUIDragScaleWidget : Node
 {
 	[Export]
 	public Control targetControl;

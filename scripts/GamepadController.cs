@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-public class GamepadController : AbstractController
+public partial class GamepadController : AbstractController
 {
 	private static GamepadController _instance;
 	private const float RELEASE_SQR_RADIUS = 0.01f;

@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class TutorialBlockNative : Node
+public partial class TutorialBlockNative : Node
 {
 	[Export]
 	public bool blockAllInput = true;

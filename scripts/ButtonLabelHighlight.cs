@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class ButtonLabelHighlight : Node
+public partial class ButtonLabelHighlight : Node
 {
 	[Export]
 	public Button targetButton;

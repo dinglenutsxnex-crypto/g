@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class UserBadgesManager : Node
+public partial class UserBadgesManager : Node
 {
 	private static UserBadgesManager _instance;
 

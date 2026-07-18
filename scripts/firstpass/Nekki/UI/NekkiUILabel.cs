@@ -4,17 +4,17 @@ using System.Collections.Generic;
 
 namespace Nekki.UI
 {
-    public class NekkiUILabel : Control, IHasAlias
+    public partial class NekkiUILabel : Control, IHasAlias
     {
         public enum Types { Localized = 0, Simple = 1 }
 
-        public class SubUnit
+        public partial class SubUnit
         {
             public Label Label;
             public NekkiUISprite Sprite;
             protected ImageData data;
 
-            public Node Obj
+            public Control Obj
             {
                 get
                 {
@@ -46,7 +46,7 @@ namespace Nekki.UI
                 }
             }
             public ImageData Data { get { return data; } }
-            public Node Unit { get { if (Label != null) return Label; return Sprite; } }
+            public Control Unit { get { if (Label != null) return Label; return Sprite; } }
 
             public SubUnit(Label label) { Label = label; }
             public SubUnit(NekkiUISprite sprite, ImageData data) { Sprite = sprite; this.data = data; }
@@ -80,13 +80,13 @@ namespace Nekki.UI
                 }
             }
 
-            public Vector3 Position
+            public Vector2 Position
             {
                 get
                 {
                     if (SubUnits.Count > 0)
-                        return new Vector3(SubUnits[0].Obj.Position.X, SubUnits[0].Obj.Position.Y + (VerticalBounds.Y + VerticalBounds.X) * SubUnits[0].Obj.Scale.Y / 2f);
-                    return Vector3.Zero;
+                        return new Vector2(SubUnits[0].Obj.Position.X, SubUnits[0].Obj.Position.Y + (VerticalBounds.Y + VerticalBounds.X) * SubUnits[0].Obj.Scale.Y / 2f);
+                    return Vector2.Zero;
                 }
             }
 
@@ -141,13 +141,13 @@ namespace Nekki.UI
             public void MoveHorizontal(float delta)
             {
                 for (int i = 0; i < SubUnits.Count; i++)
-                    SubUnits[i].Obj.Position += Vector3.Left * delta;
+                    SubUnits[i].Obj.Position += new Vector2(-delta, 0f);
             }
 
             public void MoveVertical(float delta)
             {
                 for (int i = 0; i < SubUnits.Count; i++)
-                    SubUnits[i].Obj.Position += Vector3.Down * delta;
+                    SubUnits[i].Obj.Position += new Vector2(0f, delta);
             }
 
             public void Clear(bool editorUsePool)
@@ -161,11 +161,11 @@ namespace Nekki.UI
                 {
                     float y = GetSubUnitOffsetY(i) * SubUnits[i].Obj.Scale.X;
                     if (i == 0)
-                        SubUnits[i].Obj.Position = new Vector3(GetXOffset() * SubUnits[i].Obj.Scale.X, y);
+                        SubUnits[i].Obj.Position = new Vector2(GetXOffset() * SubUnits[i].Obj.Scale.X, y);
                     else if (SubUnits[i - 1].Label != null && string.IsNullOrEmpty(SubUnits[i - 1].Label.Text))
-                        SubUnits[i].Obj.Position = new Vector3(SubUnits[i - 1].Obj.Position.X + Parent.Margin.X * SubUnits[i].Obj.Scale.X, y);
+                        SubUnits[i].Obj.Position = new Vector2(SubUnits[i - 1].Obj.Position.X + Parent.Margin.X * SubUnits[i].Obj.Scale.X, y);
                     else
-                        SubUnits[i].Obj.Position = new Vector3(SubUnits[i - 1].Width + SubUnits[i - 1].Obj.Position.X + Parent.Margin.X * SubUnits[i].Obj.Scale.X, y);
+                        SubUnits[i].Obj.Position = new Vector2(SubUnits[i - 1].Width + SubUnits[i - 1].Obj.Position.X + Parent.Margin.X * SubUnits[i].Obj.Scale.X, y);
                 }
             }
 
@@ -174,7 +174,7 @@ namespace Nekki.UI
                 if (SubUnits.Count > 0 && SubUnits[0].Obj.Scale.X != scale)
                 {
                     for (int i = 0; i < SubUnits.Count; i++)
-                        SubUnits[i].Obj.Scale = new Vector3(scale, scale, scale);
+                        SubUnits[i].Obj.Scale = new Vector2(scale, scale);
                 }
             }
 
@@ -256,9 +256,9 @@ namespace Nekki.UI
             public Label InsertLabel()
             {
                 Label label = new Label();
-                AddChild(label);
-                label.Position = Vector3.Zero;
-                label.Scale = Vector3.One;
+                Parent.AddChild(label);
+                label.Position = Vector2.Zero;
+                label.Scale = Vector2.One;
                 AddUnit(label);
                 return label;
             }
@@ -266,9 +266,9 @@ namespace Nekki.UI
             public NekkiUISprite InsertImage(string sprite, float scale, bool rowSize, ImageData data)
             {
                 NekkiUISprite spriteNode = new NekkiUISprite();
-                AddChild(spriteNode);
-                spriteNode.Position = Vector3.Zero;
-                spriteNode.Scale = Vector3.One;
+                Parent.AddChild(spriteNode);
+                spriteNode.Position = Vector2.Zero;
+                spriteNode.Scale = Vector2.One;
                 spriteNode.SpriteName = sprite;
                 AddUnit(spriteNode, data);
                 return spriteNode;
@@ -279,7 +279,7 @@ namespace Nekki.UI
         }
 
         [Serializable]
-        public class ImageData
+        public partial class ImageData
         {
             private int _customOffsetY;
             public NekkiUISprite Sprite;
@@ -294,7 +294,7 @@ namespace Nekki.UI
         }
 
         [Serializable]
-        public class LineData
+        public partial class LineData
         {
             private int _paddingTop;
             public int PaddingTop { get { return _paddingTop; } set { _paddingTop = value; } }

@@ -3,7 +3,7 @@ using Godot;
 
 namespace SF3.Items
 {
-	public class PerkSlot : Node
+	public partial class PerkSlot : Node
 	{
 		[Export]
 		public int slotIndex;

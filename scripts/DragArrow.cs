@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class DragArrow : Node3D
+public partial class DragArrow : Node3D
 {
 	public TutorialComponent dragable;
 	public TutorialComponent target;

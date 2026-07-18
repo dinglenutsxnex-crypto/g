@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class BadgeUnit : Node
+public partial class BadgeUnit : Node
 {
 	[Export]
 	public TextureRect badgeIcon;

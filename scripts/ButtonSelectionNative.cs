@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class ButtonSelectionNative : TutorialPointer
+public partial class ButtonSelectionNative : TutorialPointer
 {
 	public TextureRect _background;
 	public TextureRect _icon;

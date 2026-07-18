@@ -1,5 +1,6 @@
 using System;
 using System.Linq.Expressions;
+using Expression = System.Linq.Expressions.Expression;
 using System.Reflection;
 
 namespace Google.Protobuf.Reflection

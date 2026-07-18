@@ -4,10 +4,10 @@ using Nekki.UI;
 using SF3;
 using SF3.GameModels;
 
-public class HUD : UIModuleHolder
+public partial class HUD : UIModuleHolder
 {
 	[Serializable]
-	public class ScoreUnit
+	public partial class ScoreUnit
 	{
 		[Export]
 		private Label _lblScore;
@@ -64,7 +64,7 @@ public class HUD : UIModuleHolder
 	}
 
 	[Serializable]
-	public abstract class BaseSlideUnit
+	public abstract partial class BaseSlideUnit
 	{
 		public enum DefaultStates
 		{
@@ -94,7 +94,7 @@ public class HUD : UIModuleHolder
 	}
 
 	[Serializable]
-	public class SlideUnit : BaseSlideUnit
+	public partial class SlideUnit : BaseSlideUnit
 	{
 		[Export]
 		private ProgressBar _bar;
@@ -127,7 +127,7 @@ public class HUD : UIModuleHolder
 	}
 
 	[Serializable]
-	public class ParticlesSlideUnit : BaseSlideUnit
+	public partial class ParticlesSlideUnit : BaseSlideUnit
 	{
 		public Node fullBarEffect;
 
@@ -165,7 +165,6 @@ public class HUD : UIModuleHolder
 	[Export]
 	private Node _hpRoot;
 
-	[Export]
 	private Node _scoreRoot;
 
 	public Node3D roundsUIParent;
@@ -183,28 +182,21 @@ public class HUD : UIModuleHolder
 	[Export]
 	private Label _name4x3;
 
-	[Export]
 	private SlideUnit _hpMain;
 
-	[Export]
 	private SlideUnit _hpFall;
 
-	[Export]
 	private SlideUnit _hpBg;
 
-	[Export]
 	private ScoreUnit _score;
 
 	[Export]
 	private Node _hpHolder;
 
-	[Export]
 	private Node _shadowEnergyHolder;
 
-	[Export]
 	private ParticlesSlideUnit _shadowEnergy;
 
-	[Export]
 	private SlideUnit _shadowEnergySlide;
 
 	private const float HP_UPADTE_TIME = 0.32f;

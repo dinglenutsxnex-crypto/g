@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class TestFightGUI : Node
+public partial class TestFightGUI : Node
 {
 	public HUD userHUD;
 

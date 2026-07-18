@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 namespace SF3.Moves
 {
 	public partial class TriggerActionDarkness : TriggerActionRoundResetable

@@ -3,7 +3,7 @@ using System;
 
 namespace SF3.BattleUtils
 {
-	public class SF3BattleUtils : Node
+	public partial class SF3BattleUtils : Node
 	{
 		private static SF3BattleUtils _instance;
 		private SF3FPSUtil _fpsUtil;

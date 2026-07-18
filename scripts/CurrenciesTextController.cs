@@ -3,7 +3,7 @@ using System;
 using SF3.UserData;
 using sf3DTO;
 
-public class CurrenciesTextController : Node
+public partial class CurrenciesTextController : Node
 {
 	public Label coinsBalanceLbl;
 	public Label bonusBalanceLbl;

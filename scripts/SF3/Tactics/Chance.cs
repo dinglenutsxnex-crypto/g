@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 
 namespace SF3.Tactics
 {

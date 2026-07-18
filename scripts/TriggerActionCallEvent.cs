@@ -1,4 +1,5 @@
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.Moves;
 public partial class TriggerActionCallEvent : TriggerActionQuest
 {

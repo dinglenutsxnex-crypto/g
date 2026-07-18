@@ -6,7 +6,7 @@ using SF3.Items;
 using SF3.UserData;
 using sf3DTO;
 
-public class CardItem : Control
+public partial class CardItem : Control
 {
 	public struct AnimationParams
 	{
@@ -57,7 +57,6 @@ public class CardItem : Control
 	[Export]
 	private Node _soundBtn;
 
-	[Export]
 	private AnimationParams _animParams;
 
 	private BaseItem _data;

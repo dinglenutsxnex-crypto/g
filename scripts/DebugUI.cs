@@ -8,7 +8,7 @@ using SF3;
 using SF3.BattleUtils;
 using SF3.UserData;
 
-public class DebugUI : UIModuleHolder
+public partial class DebugUI : UIModuleHolder
 {
 	private enum DebugUIStates
 	{

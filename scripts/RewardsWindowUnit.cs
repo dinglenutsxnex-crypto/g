@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class RewardsWindowUnit : Node
+public partial class RewardsWindowUnit : Node
 {
 	[Export]
 	public TextureRect icon;

@@ -4,6 +4,7 @@ using Jint.Native;
 using Jint.Native.Array;
 using Jint.Native.Object;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SimpleJSON;
 namespace SF3.Items
 {

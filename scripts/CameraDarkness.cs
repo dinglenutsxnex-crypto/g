@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class CameraDarkness : Node
+public partial class CameraDarkness : Node
 {
 	[Export]
 	public Color darknessColor = Colors.Black;

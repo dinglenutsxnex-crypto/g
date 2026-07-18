@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class ConfigurableDialogContent : Node
+public partial class ConfigurableDialogContent : Node
 {
 	[Export]
 	public Label titleLabel;

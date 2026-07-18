@@ -6,6 +6,7 @@ using Jint.Native;
 using Jint.Native.Array;
 using Jint.Runtime;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SimpleJSON;
 using sf3DTO;
 public partial class FightInfo : ICloneable

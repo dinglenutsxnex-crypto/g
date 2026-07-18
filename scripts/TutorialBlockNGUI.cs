@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class TutorialBlockNGUI : Node
+public partial class TutorialBlockNGUI : Node
 {
 	[Export]
 	public bool blockAllInput = true;

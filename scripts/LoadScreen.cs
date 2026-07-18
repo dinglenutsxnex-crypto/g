@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Nekki.Yaml;
 using Node = Nekki.Yaml.Node;
 
-public class LoadScreen : UIModuleHolder
+public partial class LoadScreen : UIModuleHolder
 {
     private class LoadScreenProcess
     {

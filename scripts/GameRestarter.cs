@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class GameRestarter : Node
+public partial class GameRestarter : Node
 {
 	private static GameRestarter _instance;
 

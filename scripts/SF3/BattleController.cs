@@ -8,7 +8,7 @@ using Godot;
 
 namespace SF3
 {
-	public class BattleController : ExtentionBehaviour, ISceneInitializationObject
+	public partial class BattleController : ExtentionBehaviour, ISceneInitializationObject
 	{
 		private static BattleController _instance;
 		private FightController _fightController;

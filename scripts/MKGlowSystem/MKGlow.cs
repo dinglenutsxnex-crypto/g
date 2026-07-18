@@ -3,7 +3,7 @@ using Godot;
 
 namespace MKGlowSystem
 {
-	public class MKGlow : Node
+	public partial class MKGlow : Node
 	{
 		[Export]
 		public float glowIntensity = 1.0f;

@@ -13,7 +13,7 @@ using sf3DTO;
 
 namespace SF3.Items
 {
-	public class ShopManager : UIModuleHolder
+	public partial class ShopManager : UIModuleHolder
 	{
 		private enum EShopState
 		{
@@ -221,8 +221,7 @@ namespace SF3.Items
 
 		private bool _refreshInCooldown;
 
-		[Export]
-		private readonly Vector3 _playerOffsetPosition = new Vector3(0f, 0f, -500f);
+				private readonly Vector3 _playerOffsetPosition = new Vector3(0f, 0f, -500f);
 
 		private UIScrollViewCustom _cardsScroll;
 		private Equipment _currentEquipmentSaved;

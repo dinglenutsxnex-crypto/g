@@ -2,9 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public abstract class AbstractController : ExtentionBehaviour
+public abstract partial class AbstractController : ExtentionBehaviour
 {
-	public class Key
+	public partial class Key
 	{
 		public Godot.Key KeyCode { get; private set; }
 		public EQuadrants Quadrant { get; private set; }

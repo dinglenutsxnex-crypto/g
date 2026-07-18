@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class ReelItem : Node
+public partial class ReelItem : Node
 {
 	[Export]
 	public TextureRect icon;

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using HttpClient = System.Net.Http.HttpClient;
+using StringContent = System.Net.Http.StringContent;
 using System.Threading.Tasks;
 using Godot;
 using Newtonsoft.Json;

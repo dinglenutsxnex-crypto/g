@@ -5,6 +5,7 @@ using Godot;
 using Jint.Native;
 using Jint.Native.Array;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 using SimpleJSON;
 using sf3DTO;

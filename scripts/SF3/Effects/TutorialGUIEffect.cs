@@ -2,7 +2,7 @@ using System;
 using Godot;
 using SF3.Effects;
 
-public class TutorialGUIEffect : GUIEffect
+public partial class TutorialGUIEffect : GUIEffect
 {
 	[Export]
 	private Node _targetUI;

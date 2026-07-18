@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class CountableReward : Node
+public partial class CountableReward : Node
 {
 	[Export]
 	public TextureRect icon;

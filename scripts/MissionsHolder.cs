@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Godot;
 using SF3;
 
-public class MissionsHolder : Node
+public partial class MissionsHolder : Node
 {
 	private List<object> _missions = new List<object>();
 

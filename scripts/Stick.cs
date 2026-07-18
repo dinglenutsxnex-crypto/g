@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public class Stick : UIModuleHolder
+public partial class Stick : UIModuleHolder
 {
-	public class ControlPoint
+	public partial class ControlPoint
 	{
 		private EDirections _direction;
 		private Node3D _t;
@@ -32,7 +32,7 @@ public class Stick : UIModuleHolder
 		}
 	}
 
-	public class StickUnit
+	public partial class StickUnit
 	{
 		public string Name;
 		public EQuadrants Quadrant;

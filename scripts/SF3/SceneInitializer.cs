@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class SceneInitializer : Node
+public partial class SceneInitializer : Node
 {
 	[Export]
 	private string _sceneType;

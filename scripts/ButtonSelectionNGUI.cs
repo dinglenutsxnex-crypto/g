@@ -4,7 +4,7 @@
 using Godot;
 using System;
 
-public class ButtonSelectionNGUI : TutorialPointer
+public partial class ButtonSelectionNGUI : TutorialPointer
 {
 	public TextureRect _background;
 	public TextureRect _innerSprite;

@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class LocationColorAnimation : Node
+public partial class LocationColorAnimation : Node
 {
 	[Export]
 	public Color targetColor = Colors.White;

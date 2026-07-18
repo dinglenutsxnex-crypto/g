@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class SceneDebug : Node
+public partial class SceneDebug : Node
 {
 	[Export]
 	public bool showDebugInfo = true;

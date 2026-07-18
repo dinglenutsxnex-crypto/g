@@ -2,12 +2,10 @@ using Godot;
 using System;
 using System.Linq;
 
-public class ColorManager : Node
+public partial class ColorManager : Node
 {
-	[Export]
 	private ColorPreset[] skinColors;
 
-	[Export]
 	private ColorPreset[] hairColors;
 
 	public static ColorManager Instance;

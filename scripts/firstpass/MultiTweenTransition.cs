@@ -1,7 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 
-public class MultiTweenTransition : Node
+public partial class MultiTweenTransition : Node
 {
     public Node[] Tweens;
     private bool _initDone;

@@ -5,7 +5,7 @@ using SF3.GameModels;
 
 namespace SF3.Effects
 {
-	public class AnimationEffects : Node
+	public partial class AnimationEffects : Node
 	{
 		private Dictionary<string, Node> _effectCache = new Dictionary<string, Node>();
 

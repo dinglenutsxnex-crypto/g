@@ -2,7 +2,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Godot;
 
-public class GameController : ExtentionBehaviour
+public partial class GameController : ExtentionBehaviour
 {
 	private bool _punchEnabled;
 	private bool _kickEnabled;

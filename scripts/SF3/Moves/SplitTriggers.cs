@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO.Compression;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using Nekki.Zip;
 using SF3.Moves;
 

@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class SSceneManager : Node
+public partial class SSceneManager : Node
 {
 	private static SSceneManager _instance;
 

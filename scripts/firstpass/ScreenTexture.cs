@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class ScreenTexture : Node
+public partial class ScreenTexture : Node
 {
     public enum TextureOutputFilter { None = 0, Blur = 1 }
     public enum TextureOutputCamera { Both = 0, Main = 1, Ui = 2 }

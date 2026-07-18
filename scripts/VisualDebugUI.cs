@@ -2,9 +2,9 @@ using Godot;
 using System.Collections;
 using System.Collections.Generic;
 
-public class VisualDebugUI : UIModuleHolder
+public partial class VisualDebugUI : UIModuleHolder
 {
-    public class Unit
+    public partial class Unit
     {
         private bool expand;
         public int iteration;

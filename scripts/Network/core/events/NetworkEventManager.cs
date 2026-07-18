@@ -4,7 +4,7 @@ using Godot;
 
 namespace Network.core.events
 {
-	public class NetworkEventManager : Node
+	public partial class NetworkEventManager : Node
 	{
 		private static NetworkEventManager _instance;
 		private Dictionary<string, List<Action<NetworkEvent>>> _listeners = new Dictionary<string, List<Action<NetworkEvent>>>();

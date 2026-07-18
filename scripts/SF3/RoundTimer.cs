@@ -2,7 +2,7 @@ using Godot;
 
 namespace SF3
 {
-	public class RoundTimer : UIModuleHolder
+	public partial class RoundTimer : UIModuleHolder
 	{
 		[Export]
 		private Label _timerLabel;

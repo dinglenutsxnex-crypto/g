@@ -4,7 +4,7 @@ using Godot;
 using SF3;
 using SF3.UserData;
 
-public class EnterPoint : Node
+public partial class EnterPoint : Node
 {
 	[Export]
 	private string _sceneName;

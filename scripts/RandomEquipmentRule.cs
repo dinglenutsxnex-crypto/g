@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Jint.Native;
 using Nekki;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3;
 using SF3.GameModels;
 using SF3.Items;

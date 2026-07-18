@@ -3,7 +3,7 @@ using Godot;
 using SF3.TutorialAnimations;
 
 [Tool]
-public class TutorialPanel : Control
+public partial class TutorialPanel : Control
 {
     [Export] private LocalizationText _description;
     [Export] private Control _panel;

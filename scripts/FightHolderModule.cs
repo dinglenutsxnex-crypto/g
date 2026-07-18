@@ -3,7 +3,7 @@ using Godot;
 using Nekki;
 using Nekki.UI;
 
-public class FightHolderModule : NekkiUIModule
+public partial class FightHolderModule : NekkiUIModule
 {
 	[Export]
 	private Node _fightContainer;

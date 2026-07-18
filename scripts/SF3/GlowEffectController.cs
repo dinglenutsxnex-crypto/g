@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class GlowEffectController : Node
+public partial class GlowEffectController : Node
 {
 	[Export]
 	public Color glowColor = Colors.Yellow;

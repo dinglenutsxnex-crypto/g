@@ -2,7 +2,7 @@ using Godot;
 using System;
 using SF3.GameModels;
 
-public class ModelFinder : Node
+public partial class ModelFinder : Node
 {
 	private Model _modelOfObject;
 

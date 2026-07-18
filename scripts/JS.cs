@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Godot;
 using Jint.Native;
 
-public class JS : Node
+public partial class JS : Node
 {
 	private static JS _instance;
 

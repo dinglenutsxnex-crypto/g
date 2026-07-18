@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class SystemMessage : Node
+public partial class SystemMessage : Node
 {
 	private static SystemMessage _instance;
 

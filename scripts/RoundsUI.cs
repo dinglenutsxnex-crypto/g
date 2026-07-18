@@ -6,7 +6,7 @@ using SF3.Audio;
 using SF3.Effects;
 using sf3DTO;
 
-public class RoundsUI : UIModuleHolder
+public partial class RoundsUI : UIModuleHolder
 {
 	public struct Shake
 	{
@@ -27,7 +27,7 @@ public class RoundsUI : UIModuleHolder
 		public bool timeout;
 	}
 
-	public class TextAnimation
+	public partial class TextAnimation
 	{
 		public Label label;
 
@@ -94,7 +94,7 @@ public class RoundsUI : UIModuleHolder
 		}
 	}
 
-	public class RoundMessageData
+	public partial class RoundMessageData
 	{
 		public int RoundNumber { get; private set; }
 
@@ -140,29 +140,21 @@ public class RoundsUI : UIModuleHolder
 	[Export]
 	private Color perfectColor;
 
-	[Export]
-	private static float shakeFrames;
+		private static float shakeFrames;
 
-	[Export]
-	private static Vector3 shakeAmplitude;
+		private static Vector3 shakeAmplitude;
 
-	[Export]
-	private static Vector3 shakePeriod;
+		private static Vector3 shakePeriod;
 
-	[Export]
-	private static Shake shakeCamera;
+		private static Shake shakeCamera;
 
-	[Export]
-	private static float _animationTime = 0.4f;
+		private static float _animationTime = 0.4f;
 
-	[Export]
-	private static float _finalLabelScale = 1f;
+		private static float _finalLabelScale = 1f;
 
-	[Export]
-	private static float _minLabelVisibility;
+		private static float _minLabelVisibility;
 
-	[Export]
-	private static float _maxLabelVisibility = 0.65f;
+		private static float _maxLabelVisibility = 0.65f;
 
 	private static bool shake;
 

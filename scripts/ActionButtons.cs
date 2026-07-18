@@ -5,10 +5,10 @@ using System.Linq;
 using Nekki;
 using SF3;
 
-public class ActionButtons : UIModuleHolder
+public partial class ActionButtons : UIModuleHolder
 {
     [Serializable]
-    public class ActionUnit
+    public partial class ActionUnit
     {
         [Export] public string Name;
         [Export] public EQuadrants Quadrant;
@@ -68,7 +68,7 @@ public class ActionButtons : UIModuleHolder
     private bool _active;
     [Export] public TextureRect shadowEnergyActiveEffect;
     [Export] public Node3D shadowEnergyRotator;
-    [Export] public ActionUnit[] ActionUnits;
+    public ActionUnit[] ActionUnits;
 
     private static Vector3 _sheduledScale = Vector3.One;
     private bool _tutorActive;

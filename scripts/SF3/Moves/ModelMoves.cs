@@ -67,7 +67,7 @@ namespace SF3.Moves
 
 			private void CreateTriggersAnimations(ITriggerAction actionsVal, Model modelState, ref Dictionary<string, ModelInfoAnimation> animNamesCompliance)
 			{
-				TriggerActionAnimation triggerActionAnimation = actionsVal as TriggerActionAnimation;
+				TriggerActionAnimationPlayer triggerActionAnimation = actionsVal as TriggerActionAnimationPlayer;
 				if (triggerActionAnimation != null)
 				{
 					AddAnimationName(triggerActionAnimation.name, modelState, ref animNamesCompliance);

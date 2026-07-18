@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class SplitController : Node
+public partial class SplitController : Node
 {
 	private List<Node> _splits = new List<Node>();
 

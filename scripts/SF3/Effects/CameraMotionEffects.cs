@@ -3,7 +3,7 @@ using Godot;
 
 namespace SF3.Effects
 {
-	public class CameraMotionEffects : Node
+	public partial class CameraMotionEffects : Node
 	{
 		[Export]
 		private Camera3D _targetCamera;

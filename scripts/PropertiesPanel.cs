@@ -8,7 +8,7 @@ using SF3.Items;
 using SF3.UserData;
 using sf3DTO;
 
-public class PropertiesPanel : UIModuleHolder
+public partial class PropertiesPanel : UIModuleHolder
 {
 	[Export]
 	private ItemPerkCard itemPerkCard;

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-public class TutorialManager : Node
+public partial class TutorialManager : Node
 {
 	private static TutorialManager _instance;
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SF3.GameModels;
 
-public class SetupRagdoll : Node
+public partial class SetupRagdoll : Node
 {
 	private class RagdollPartData
 	{

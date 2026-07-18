@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using sf3DTO;
 
 namespace SF3.Tactics

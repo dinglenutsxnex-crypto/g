@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class TutorialMaskGenerator : Node
+public partial class TutorialMaskGenerator : Node
 {
 	[Export]
 	public Color maskColor = Colors.Black;

@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class FeedbackDialogController : Node
+public partial class FeedbackDialogController : Node
 {
 	[Export]
 	public LineEdit feedbackField;

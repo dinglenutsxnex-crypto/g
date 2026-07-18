@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class EditorVertex : Node
+public partial class EditorVertex : Node
 {
 	[Export]
 	public Vector3 position;

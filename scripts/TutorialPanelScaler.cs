@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class TutorialPanelScaler : Node
+public partial class TutorialPanelScaler : Node
 {
 	[Export]
 	private ImageWrapper[] _targets;

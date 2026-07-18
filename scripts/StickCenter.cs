@@ -2,7 +2,7 @@ using Godot;
 using System;
 using SF3;
 
-public class StickCenter : ExtentionBehaviour
+public partial class StickCenter : ExtentionBehaviour
 {
 	private Camera3D _uiCamera;
 	private Vector3 TargetPosition;

@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-public class TutorialComponent : Node
+public partial class TutorialComponent : Node
 {
 	[Export]
 	public bool isEnabled = true;

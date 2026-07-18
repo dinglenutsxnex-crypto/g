@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Jint.Native;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3;
 using SimpleJSON;
 using Godot;

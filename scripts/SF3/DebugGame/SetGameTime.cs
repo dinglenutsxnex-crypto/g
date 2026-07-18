@@ -4,7 +4,7 @@ using SF3.Audio;
 
 namespace SF3.DebugGame
 {
-	public class SetGameTime : UIModuleHolder
+	public partial class SetGameTime : UIModuleHolder
 	{
 		public static float currentGameTime;
 

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class LocalizationText : Node
+public partial class LocalizationText : Node
 {
     [Export]
     private string _alias;

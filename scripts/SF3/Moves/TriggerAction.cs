@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Nekki.Yaml;
+using Node = Nekki.Yaml.Node;
 using SF3.GameModels;
 using SF3.Utils;
 
@@ -184,7 +185,7 @@ namespace SF3.Moves
 		public static void Init()
 		{
 			Dictionary<string, Type> dictionary = new Dictionary<string, Type>();
-			dictionary.Add("Animation", typeof(TriggerActionAnimation));
+			dictionary.Add("Animation", typeof(TriggerActionAnimationPlayer));
 			dictionary.Add("AnimationRandom", typeof(TriggerActionAnimationRandom));
 			dictionary.Add("SetAttribute", typeof(TriggerActionSetAttribute));
 			dictionary.Add("SetUserVariable", typeof(TriggerActionSetUserVariable));
@@ -194,7 +195,7 @@ namespace SF3.Moves
 			dictionary.Add("CustomEffect", typeof(TriggerCustomEffect));
 			dictionary.Add("DestroyEffect", typeof(TriggerDestroyEffect));
 			dictionary.Add("FreezeFrame", typeof(TriggerActionFreezeFrame));
-			dictionary.Add("ShakeCamera", typeof(TriggerActionShakeCamera));
+			dictionary.Add("ShakeCamera", typeof(TriggerActionShakeCamera3D));
 			dictionary.Add("CreateModel", typeof(TriggerActionCreateModel));
 			dictionary.Add("DestroyMe", typeof(TriggerActionDestroyMe));
 			dictionary.Add("ActivateColliders", typeof(TriggerActionActivateColliders));
@@ -212,7 +213,7 @@ namespace SF3.Moves
 			dictionary.Add("Move", typeof(TriggerActionMove));
 			dictionary.Add("HighlightKey", typeof(TriggerActionHighlightKey));
 			dictionary.Add("EndTryOn", typeof(TriggerActionEndTryOn));
-			dictionary.Add("PauseAnimation", typeof(TriggerActionPauseAnimation));
+			dictionary.Add("PauseAnimation", typeof(TriggerActionPauseAnimationPlayer));
 			dictionary.Add("Dialog", typeof(TriggerActionShowDialog));
 			dictionary.Add("SystemAlert", typeof(TriggerActionShowSystemAlert));
 			dictionary.Add("SwitchTactics", typeof(TriggerActionSwitchTactics));

@@ -4,7 +4,7 @@ using SF3;
 using SF3.Audio;
 using SF3.UserData;
 
-public class PauseWindow : UIModuleHolder
+public partial class PauseWindow : UIModuleHolder
 {
 	public delegate void PauseEnabledEventHandler();
 

@@ -8,7 +8,7 @@ using sf3DTO;
 
 namespace SF3.Items
 {
-	public class BoosterpacksManager : UIModuleHolder
+	public partial class BoosterpacksManager : UIModuleHolder
 	{
 		private const float HIDE_MODELS_TIME = 1f;
 		private const float BOOSTERPACK_FADE_TIME = 0.5f;

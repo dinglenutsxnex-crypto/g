@@ -1,6 +1,6 @@
 using Godot;
 
-public class TutorialComponentNative : TutorialComponent
+public partial class TutorialComponentNative : TutorialComponent
 {
 	private ButtonSelectionNative _selector;
 

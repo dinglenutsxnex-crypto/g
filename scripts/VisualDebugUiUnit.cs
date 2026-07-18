@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public class VisualDebugUiUnit : Node
+public partial class VisualDebugUiUnit : Node
 {
 	private static List<VisualDebugUiUnit> _units = new List<VisualDebugUiUnit>();
 
